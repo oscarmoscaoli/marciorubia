@@ -7,89 +7,139 @@
     
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
         :root { --bordo: #5e111a; --fundo-escuro: #0a0f1d; }
-        body { background-color: var(--fundo-escuro); color: #e2e8f0; font-family: sans-serif; }
+        body { background-color: var(--fundo-escuro); color: #e2e8f0; font-family: sans-serif; scroll-behavior: smooth; }
         .gradient-bordo { background: linear-gradient(135deg, #5e111a 0%, #3a0a10 100%); }
+        
+        /* Botão Flutuante Nativo */
+        .btn-whatsapp-fixo {
+            position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            background-color: #25d366; color: white; border-radius: 50px;
+            padding: 12px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-decoration: none; font-weight: bold; font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp-fixo:hover { transform: scale(1.05); background-color: #20ba5a; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animar { animation: fadeInUp 1s ease-out forwards; }
     </style>
 </head>
 <body>
 
-    <nav class="bg-[#070b14] border-b border-gray-800 py-4">
+    <a href="https://wa.me/5514988066737?text=Olá,%20vim%20pela%20página%20de%20Revisão%20e%20gostaria%20de%20uma%20análise.%20(UTM:Botao_Fixo)" class="btn-whatsapp-fixo">
+        <span class="mr-2 uppercase tracking-wider">Dúvidas? Fale Conosco</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.405c0 6.556-5.332 11.888-11.888 11.888-2.01 0-3.988-.511-5.741-1.482l-6.243 1.706z"/></svg>
+    </a>
+
+    <nav class="bg-[#070b14] border-b border-gray-900 py-6">
         <div class="container mx-auto px-6 flex justify-center">
             <img src="logo_branco.png" alt="Márcio Rubia" class="h-12">
         </div>
     </nav>
 
     <section class="py-16 md:py-24 border-b border-gray-900">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-red-600 font-bold tracking-widest uppercase text-sm">Oportunidade de Revisão</span>
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            
+            <div class="animar">
+                <span class="text-red-600 font-bold tracking-widest uppercase text-sm">Especialista Previdenciário</span>
                 <h1 class="text-4xl md:text-5xl font-extrabold my-6 text-white leading-tight uppercase">
                     Seu benefício pode estar abaixo do valor correto.
                 </h1>
                 <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-                    Milhares de aposentados têm direito a revisões que podem aumentar o valor mensal e gerar pagamentos de atrasados. Analisamos seu caso detalhadamente.
+                    Mais de 1.800 clientes atendidos em Bauru e região. Milhares de aposentados têm direito a revisões que podem aumentar o valor mensal e gerar o recebimento de atrasados.
                 </p>
-                <a href="https://wa.me/5514988066737?text=Olá,%20vim%20pela%20página%20de%20Revisão%20e%20gostaria%20de%20uma%20análise.%20utm_source=lp_revisao&utm_medium=botao_hero" 
-                   class="inline-block gradient-bordo text-white px-8 py-4 rounded-lg font-bold text-lg hover:brightness-125 transition w-full md:w-auto text-center shadow-xl">
-                   ANALISAR MINHA REVISÃO AGORA
-                </a>
+                <div class="space-y-4">
+                    <div class="flex items-center text-gray-300">
+                        <span class="text-red-600 mr-3 text-xl">✔</span> Aumento imediato no valor da mensalidade.
+                    </div>
+                    <div class="flex items-center text-gray-300">
+                        <span class="text-red-600 mr-3 text-xl">✔</span> Recebimento de valores retroativos.
+                    </div>
+                    <div class="flex items-center text-gray-300">
+                        <span class="text-red-600 mr-3 text-xl">✔</span> Análise técnica feita por especialistas.
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-[#161e2d] p-8 rounded-xl shadow-2xl border border-gray-800">
-                <h3 class="text-2xl font-bold text-white mb-6">Solicitar Análise Gratuita</h3>
-                <form action="https://formspree.io/f/SEU_ID_FORMSPREE" method="POST" class="space-y-4">
+            <div id="contato" class="bg-[#161e2d] p-8 rounded-xl shadow-2xl border border-gray-800 animar">
+                <h3 class="text-2xl font-bold text-white mb-2">Solicitar Análise Gratuita</h3>
+                <p class="text-gray-400 text-sm mb-8">Preencha os dados e entraremos em contato via WhatsApp.</p>
+                
+                <form id="leadForm" class="space-y-4">
+                    <input type="hidden" name="origem" value="LP_REVISAO_BAURU">
+
                     <div>
-                        <label class="block text-sm font-medium mb-1">Nome Completo</label>
-                        <input type="text" name="nome" required class="w-full bg-[#0a0f1d] border border-gray-700 rounded p-3 focus:border-red-600 outline-none">
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Nome Completo</label>
+                        <input type="text" name="nome" placeholder="Digite seu nome" required 
+                               class="w-full bg-[#0a0f1d] border border-gray-800 rounded-lg p-4 outline-none focus:border-red-600 transition">
                     </div>
+                    
                     <div>
-                        <label class="block text-sm font-medium mb-1">WhatsApp</label>
-                        <input type="tel" name="whatsapp" required class="w-full bg-[#0a0f1d] border border-gray-800 rounded p-3 focus:border-red-600 outline-none" placeholder="(14) 99999-9999">
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Seu WhatsApp</label>
+                        <input type="tel" name="whatsapp" placeholder="(14) 99999-9999" required 
+                               class="w-full bg-[#0a0f1d] border border-gray-800 rounded-lg p-4 outline-none focus:border-red-600 transition">
                     </div>
+
                     <div>
-                        <label class="block text-sm font-medium mb-1">Ano da Aposentadoria</label>
-                        <input type="number" name="ano_aposentadoria" class="w-full bg-[#0a0f1d] border border-gray-700 rounded p-3 focus:border-red-600 outline-none" placeholder="Ex: 2018">
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Ano que se aposentou</label>
+                        <input type="number" name="ano_aposentadoria" placeholder="Ex: 2018" 
+                               class="w-full bg-[#0a0f1d] border border-gray-800 rounded-lg p-4 outline-none focus:border-red-600 transition">
                     </div>
-                    <button type="submit" class="w-full bg-white text-black font-extrabold py-4 rounded uppercase tracking-widest hover:bg-gray-200 transition">
-                        Enviar Dados para Análise
+
+                    <button type="submit" id="btnEnviar" 
+                            class="w-full gradient-bordo text-white font-extrabold py-5 rounded-lg uppercase tracking-widest hover:brightness-125 transition shadow-lg">
+                        Analisar meu caso agora
                     </button>
-                    <p class="text-[10px] text-gray-500 text-center mt-4 uppercase">Privacidade garantida. Seus dados estão seguros.</p>
+
+                    <div id="msgSucesso" class="hidden bg-green-900/30 text-green-400 p-4 rounded-lg text-center font-bold text-sm uppercase border border-green-800 mt-4">
+                        Recebemos seus dados! Entraremos em contato em breve.
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-[#070b14]">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-white mb-16 uppercase tracking-tighter">Por que revisar sua aposentadoria?</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-[#161e2d] rounded border-b-4 border-red-900">
-                    <h4 class="text-xl font-bold text-white mb-4">Aumento Mensal</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Muitos cálculos do INSS ignoram períodos contributivos importantes, reduzindo seu salário mensal.</p>
-                </div>
-                <div class="p-8 bg-[#161e2d] rounded border-b-4 border-red-900">
-                    <h4 class="text-xl font-bold text-white mb-4">Recebimento de Atrasados</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Se o erro for comprovado, você tem direito a receber a diferença acumulada dos últimos 5 anos.</p>
-                </div>
-                <div class="p-8 bg-[#161e2d] rounded border-b-4 border-red-900">
-                    <h4 class="text-xl font-bold text-white mb-4">Segurança Jurídica</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Nossa equipe especialista garante que o pedido seja feito com base nas teses jurídicas mais recentes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-gray-900 text-center">
-        <p class="text-gray-500 text-xs uppercase tracking-[0.2em] mb-4">Márcio Henrique Rubia OAB/SP 378.830</p>
-        <p class="text-gray-700 text-[10px] uppercase">
-            Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" class="text-red-900">Oscar Mosca</a>
+    <footer class="py-12 text-center border-t border-gray-900 bg-[#070b14]">
+        <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">Márcio Henrique Rubia OAB/SP 378.830</p>
+        <p class="text-gray-500 text-xs uppercase tracking-widest mb-6">Bauru - SP | (14) 98806-6737</p>
+        <p class="text-gray-700 text-[10px] uppercase tracking-tighter">
+            Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900 hover:text-red-500 transition">Oscar Mosca</a>
         </p>
     </footer>
+
+    <script>
+        const form = document.getElementById('leadForm');
+        // Sua URL do Google Apps Script
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec';
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = document.getElementById('btnEnviar');
+            btn.innerText = "ENVIANDO DADOS...";
+            btn.disabled = true;
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    console.log('Sucesso!', response);
+                    form.reset();
+                    btn.classList.add('hidden');
+                    document.getElementById('msgSucesso').classList.remove('hidden');
+                })
+                .catch(error => {
+                    console.error('Erro!', error.message);
+                    alert('Erro ao enviar. Por favor, tente o botão do WhatsApp!');
+                    btn.innerText = "Analisar meu caso agora";
+                    btn.disabled = false;
+                });
+        });
+    </script>
 
 </body>
 </html>
