@@ -8,6 +8,7 @@
     <meta name="description" content="Márcio Rubia Advocacia em Bauru. Especialista em Ações contra o INSS, Aposentadorias e Direito do Trabalho com 16 anos de experiência.">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     
     <style>
         :root {
@@ -17,14 +18,12 @@
         }
         body { background-color: var(--fundo-escuro); color: #e2e8f0; scroll-behavior: smooth; font-family: sans-serif; }
         
-        /* Animação do Banner Principal */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .animar-texto { animation: fadeInUp 1s ease-out forwards; }
 
-        /* Banner Centralizado */
         .hero-container {
             position: relative;
             min-height: 500px;
@@ -35,7 +34,6 @@
             background: radial-gradient(circle at center, #161e2d 0%, var(--fundo-escuro) 100%);
         }
 
-        /* Hover nas Áreas de Atuação e Blog */
         .card-interativo {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-bottom: 4px solid transparent;
@@ -47,7 +45,6 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.5);
         }
 
-        /* Hover na Equipe */
         .foto-equipe {
             transition: all 0.5s ease;
             filter: grayscale(100%);
@@ -59,7 +56,6 @@
             border-color: var(--bordo);
         }
 
-        /* FAQ Expansível */
         details summary { list-style: none; outline: none; cursor: pointer; }
         details summary::-webkit-details-marker { display: none; }
         details[open] summary { color: #ef4444; }
@@ -69,7 +65,8 @@
 
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="logo_branco.png" alt="Márcio Rubia" class="h-16"> <div class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider">
+            <img src="logo_branco.png" alt="Márcio Rubia" class="h-16">
+            <div class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider">
                 <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
                 <a href="#blog" class="hover:text-red-500 transition">Blog</a>
                 <a href="#equipe" class="hover:text-red-500 transition">Equipe</a>
@@ -93,7 +90,7 @@
                     Mais de 1.800 clientes atendidos com transparência e dedicação em Bauru e região.
                 </p>
                 <a href="https://wa.me/5514988066737?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20consulta.%20(Origem:%20Banner_Principal)" 
-                   class="inline-block bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition font-bold uppercase">
+                   class="inline-block bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition uppercase">
                    Entrar em contato
                 </a>
             </div>
@@ -101,24 +98,24 @@
     </section>
 
     <section id="servicos" class="py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-center text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
-            <div class="grid md:grid-cols-4 gap-6">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
+            <div class="grid md:grid-cols-4 gap-6 text-left">
                 <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Especial, por idade, rural e tempo de contribuição. Planejamos o melhor benefício para você.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Especial, por idade, rural e tempo de contribuição.</p>
                 </div>
                 <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Benefícios</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Auxílio-doença, auxílio-maternidade e BPC/LOAS. Proteção rápida para quem mais precisa.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Auxílio-doença, auxílio-maternidade e BPC/LOAS.</p>
                 </div>
                 <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Revisões</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Análise criteriosa de benefícios já concedidos para garantir o valor máximo da sua renda.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Análise criteriosa de benefícios já concedidos.</p>
                 </div>
                 <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Defesa integral dos direitos do trabalhador contra irregularidades e rescisões indevidas.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Defesa integral dos direitos do trabalhador contra irregularidades.</p>
                 </div>
             </div>
         </div>
@@ -147,62 +144,11 @@
         </div>
     </section>
 
-    <section id="blog" class="py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-white uppercase tracking-tighter mb-12">Informativo Jurídico</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <article class="card-interativo bg-[#161e2d] p-6 rounded">
-                    <span class="text-xs text-red-500 font-bold uppercase">Previdenciário</span>
-                    <h4 class="text-xl font-bold text-white mt-2 mb-4 leading-tight">Mudanças na Aposentadoria 2026</h4>
-                    <p class="text-gray-400 text-sm mb-6">Confira as novas regras de transição vigentes.</p>
-                    <a href="#" class="text-white font-bold text-xs uppercase border-b border-red-800 pb-1">Ler Artigo</a>
-                </article>
-                <article class="card-interativo bg-[#161e2d] p-6 rounded">
-                    <span class="text-xs text-red-500 font-bold uppercase">Trabalhista</span>
-                    <h4 class="text-xl font-bold text-white mt-2 mb-4 leading-tight">Cálculo de Verbas Rescisórias</h4>
-                    <p class="text-gray-400 text-sm mb-6">Entenda seus direitos no momento da demissão.</p>
-                    <a href="#" class="text-white font-bold text-xs uppercase border-b border-red-800 pb-1">Ler Artigo</a>
-                </article>
-                <article class="card-interativo bg-[#161e2d] p-6 rounded">
-                    <span class="text-xs text-red-500 font-bold uppercase">Dicas</span>
-                    <h4 class="text-xl font-bold text-white mt-2 mb-4 leading-tight">Documentos para o INSS</h4>
-                    <p class="text-gray-400 text-sm mb-6">Evite que o seu benefício seja negado.</p>
-                    <a href="#" class="text-white font-bold text-xs uppercase border-b border-red-800 pb-1">Ler Artigo</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-24 bg-[#070b14]">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
-            <div class="space-y-4">
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
-                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] transition">
-                        Como funciona a Aposentadoria Especial?
-                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
-                        Destinada a trabalhadores expostos a agentes nocivos. Analisamos seu histórico para garantir o tempo reduzido.
-                    </div>
-                </details>
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
-                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] transition">
-                        Posso pedir revisão do meu benefício?
-                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
-                        Sim. Se o INSS não considerou todos os seus salários, a revisão pode aumentar seu valor mensal.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
     <footer class="bg-black py-16 border-t border-gray-900">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 text-center md:text-left">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12">
-                <img src="logo_branco.png" alt="Márcio Rubia" class="h-16 mb-8 md:mb-0"> <div class="text-center md:text-right text-gray-500 text-sm space-y-2">
+                <img src="logo_branco.png" alt="Márcio Rubia" class="h-16 mb-8 md:mb-0">
+                <div class="text-gray-500 text-sm space-y-2">
                     <p class="font-bold text-white uppercase tracking-widest">Márcio Henrique Rubia OAB/SP 378.830</p>
                     <p>Edifício Comercial Clemente Faria - Sala 905</p>
                     <p>R. Rio Branco, 7-19 - Centro, Bauru - SP</p>
@@ -218,5 +164,16 @@
         </div>
     </footer>
 
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
