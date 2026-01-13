@@ -213,7 +213,7 @@
     <script>
         // Carrega Planilha Google
         async function loadSheet() {
-            const url = 'LINK_DA_SUA_PLANILHA_AQUI'; // <--- COLE O LINK CSV AQUI
+            const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&single=true&output=csv'; // <--- COLE O LINK CSV AQUI
             try {
                 const res = await fetch(url);
                 const data = await res.text();
