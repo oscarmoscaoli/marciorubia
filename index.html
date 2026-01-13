@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Márcio Rubia | Advocacia Previdenciária e Trabalhista em Bauru</title>
-    <meta name="description" content="Márcio Rubia Advocacia em Bauru. Especialista em Ações contra o INSS, Aposentadorias e Direito do Trabalho com 16 anos de experiência.">
     
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -19,13 +18,16 @@
         :root { --bordo: #5e111a; --fundo-escuro: #0a0f1d; --card-escuro: #161e2d; }
         body { background-color: var(--fundo-escuro); color: #e2e8f0; scroll-behavior: smooth; font-family: sans-serif; }
         
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .animar-texto { animation: fadeInUp 1s ease-out forwards; }
-
-        .hero-container {
-            position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center;
-            background: radial-gradient(circle at center, #161e2d 0%, var(--fundo-escuro) 100%);
+        /* Botão Flutuante Nativo */
+        .btn-whatsapp-fixo {
+            position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            background-color: #25d366; color: white; border-radius: 50px;
+            padding: 12px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-decoration: none; font-weight: bold; font-size: 14px;
+            transition: all 0.3s ease;
         }
+        .btn-whatsapp-fixo:hover { transform: scale(1.05); background-color: #20ba5a; }
 
         .card-interativo {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -38,13 +40,14 @@
 
         .foto-equipe { transition: all 0.5s ease; filter: grayscale(100%); border: 2px solid #1f2937; }
         .foto-equipe:hover { filter: grayscale(0%); transform: scale(1.05); border-color: var(--bordo); }
-
-        details summary { list-style: none; outline: none; cursor: pointer; }
-        details summary::-webkit-details-marker { display: none; }
-        details[open] summary { color: #ef4444; }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/5514988066737?text=Olá,%20estou%20no%20seu%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida." class="btn-whatsapp-fixo" target="_blank">
+        <span class="mr-2 uppercase tracking-wider">Falar no WhatsApp</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.405c0 6.556-5.332 11.888-11.888 11.888-2.01 0-3.988-.511-5.741-1.482l-6.243 1.706z"/></svg>
+    </a>
 
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium uppercase tracking-wider">
@@ -55,32 +58,25 @@
                 <a href="#blog" class="hover:text-red-500 transition">Informativo</a>
                 <a href="#faq" class="hover:text-red-500 transition">Dúvidas</a>
                 <a href="#instagram" class="hover:text-red-500 transition">Instagram</a>
-                <a href="https://wa.me/5514988066737?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20consulta." 
-                   class="bg-[#5e111a] text-white px-6 py-2 rounded shadow-lg hover:bg-red-900 transition font-bold text-xs tracking-widest uppercase">
-                   Entrar em contato
-                </a>
             </div>
         </div>
     </nav>
 
-    <section class="hero-container border-b border-gray-900">
-        <div class="container mx-auto px-6 animar-texto">
-            <div class="max-w-3xl mx-auto text-center">
-                <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">16 Anos de Experiência</p>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white uppercase leading-tight">Advocacia em Ações contra o INSS e Revisão de Benefícios</h1>
-                <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">Mais de 1.800 clientes atendidos com transparência e dedicação em Bauru e região.</p>
-                <a href="https://wa.me/5514988066737?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20consulta." 
-                   class="inline-block bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition uppercase tracking-widest">
-                   Falar com um Especialista
-                </a>
-            </div>
+    <section class="py-24 text-center border-b border-gray-900">
+        <div class="container mx-auto px-6">
+            <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">16 Anos de Experiência</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white uppercase leading-tight">Advocacia em Ações contra o INSS</h1>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Atendimento especializado em Aposentadorias e Revisões em Bauru e região.</p>
+            <a href="https://wa.me/5514988066737" class="bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition uppercase tracking-widest">
+               Consultar Especialista
+            </a>
         </div>
     </section>
 
     <section id="servicos" class="py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
-            <div class="grid md:grid-cols-4 gap-6 text-left">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-white uppercase text-center tracking-tighter">Áreas de Atuação</h2>
+            <div class="grid md:grid-cols-4 gap-6">
                 <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3>
                     <p class="text-gray-400 text-sm">Especial, por idade, rural e tempo de contribuição.</p>
@@ -95,69 +91,41 @@
                 </div>
                 <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3>
-                    <p class="text-gray-400 text-sm">Defesa integral contra irregularidades e rescisões indevidas.</p>
+                    <p class="text-gray-400 text-sm">Defesa integral contra irregularidades e rescisões.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="equipe" class="py-24 bg-[#070b14]">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Nossa Equipe</h2>
-            <div class="grid md:grid-cols-3 gap-12 text-center">
-                <div><img src="Marcio.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Dr. Márcio Rubia</h4><p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p></div>
-                <div><img src="Carla.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Carla Rodrigues</h4><p class="text-red-600 text-sm font-bold uppercase">Especialista</p></div>
-                <div><img src="Julia.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Julia</h4><p class="text-red-600 text-sm font-bold uppercase">Atendimento</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="py-24">
+    <section id="blog" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white uppercase mb-12 tracking-tighter text-center md:text-left">Informativo Jurídico</h2>
-            <div id="planilha-blog" class="grid md:grid-cols-3 gap-8 text-left">
-                <p class="text-gray-500">Carregando informativo...</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-24 bg-[#070b14]">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
-            <div id="planilha-faq" class="space-y-4">
-                <p class="text-center text-gray-500">Carregando perguntas...</p>
+            <h2 class="text-3xl font-bold text-white uppercase mb-12 text-center tracking-tighter">Informativo Jurídico</h2>
+            <div id="planilha-blog" class="grid md:grid-cols-3 gap-8">
+                <p class="text-gray-500 text-center col-span-3">Carregando informativo...</p>
             </div>
         </div>
     </section>
 
     <section id="instagram" class="py-24">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-white uppercase mb-12 tracking-tighter">Acompanhe no Instagram</h2>
+            <h2 class="text-3xl font-bold text-white uppercase mb-12 tracking-tighter">Instagram</h2>
             <div class="max-w-5xl mx-auto p-4 rounded-lg bg-[#070b14] border border-gray-800">
                 <behold-widget feed-id="VApWS7zfHFyX2596YEbP"></behold-widget>
             </div>
-            <div class="mt-8"><a href="https://www.instagram.com/advocaciarubia/" target="_blank" class="text-red-500 font-bold hover:underline uppercase text-sm tracking-widest">Ver perfil completo</a></div>
         </div>
     </section>
 
-    <footer class="bg-black py-16 border-t border-gray-900">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <img src="logo_branco.png" class="h-16 mb-8 md:mb-0">
-            <div class="text-gray-500 text-sm space-y-2">
-                <p class="font-bold text-white uppercase tracking-widest text-xs">Márcio Henrique Rubia OAB/SP 378.830</p>
-                <p>Edifício Comercial Clemente Faria - Sala 905</p>
-                <p>R. Rio Branco, 7-19 - Centro, Bauru - SP</p>
-                <p>Segunda a Sexta: 09:00 – 17:00 | (14) 98806-6737</p>
-            </div>
-        </div>
-        <div class="mt-12 text-center text-[10px] text-gray-700 uppercase tracking-widest border-t border-gray-900 pt-8">
-            <p>Direitos Reservados &copy; 2026 Márcio Rubia Advocacia</p>
-            <p class="mt-4">Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900 hover:text-red-500 transition">Oscar Mosca</a></p>
+    <footer class="bg-black py-16 border-t border-gray-900 text-center">
+        <div class="container mx-auto px-6">
+            <img src="logo_branco.png" class="h-16 mx-auto mb-8">
+            <p class="text-gray-500 text-sm uppercase tracking-widest">Márcio Henrique Rubia OAB/SP 378.830</p>
+            <p class="text-gray-700 text-[10px] mt-8 uppercase tracking-widest">Criado por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900">Oscar Mosca</a></p>
         </div>
     </footer>
 
     <script>
-        async function loadFromSheet(url, targetId, isFAQ = false) {
+        // Lógica de carregamento da planilha
+        async function loadFromSheet(url, targetId) {
             try {
                 const res = await fetch(url);
                 const data = await res.text();
@@ -166,37 +134,24 @@
                 
                 container.innerHTML = rows.map(r => {
                     const c = r.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-                    if (c && c.length >= 2) {
+                    if (c && c.length >= 3) {
                         const col1 = c[0].replace(/^"|"$/g, '');
                         const col2 = c[1].replace(/^"|"$/g, '');
-                        if (isFAQ) {
-                            return `
-                                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
-                                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] transition cursor-pointer">
-                                        ${col1} <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
-                                    </summary>
-                                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">${col2}</div>
-                                </details>`;
-                        } else if (c.length >= 3) {
-                            const col3 = c[2].replace(/^"|"$/g, '');
-                            return `
-                                <article class="card-interativo bg-[#161e2d] p-6 rounded">
-                                    <span class="text-xs text-red-500 font-bold uppercase tracking-widest">${col2}</span>
-                                    <h4 class="text-xl font-bold text-white mt-2 mb-4 leading-tight">${col1}</h4>
-                                    <p class="text-gray-400 text-sm leading-relaxed">${col3}</p>
-                                </article>`;
-                        }
+                        const col3 = c[2].replace(/^"|"$/g, '');
+                        return `
+                            <article class="card-interativo bg-[#161e2d] p-6 rounded">
+                                <span class="text-xs text-red-500 font-bold uppercase">${col2}</span>
+                                <h4 class="text-xl font-bold text-white mt-2 mb-4">${col1}</h4>
+                                <p class="text-gray-400 text-sm">${col3}</p>
+                            </article>`;
                     }
                     return '';
                 }).join('');
-            } catch (e) { document.getElementById(targetId).innerHTML = 'Conteúdo indisponível.'; }
+            } catch (e) { console.error(e); }
         }
 
         const linkBlog = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&single=true&output=csv';
-        const linkFAQ = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=1821350565&single=true&output=csv';
-
         loadFromSheet(linkBlog, 'planilha-blog');
-        loadFromSheet(linkFAQ, 'planilha-faq', true);
 
         // Behold Instagram
         (() => {
