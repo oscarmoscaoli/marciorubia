@@ -16,7 +16,6 @@
         body { background-color: var(--fundo-escuro); color: #e2e8f0; font-family: sans-serif; scroll-behavior: smooth; }
         .gradient-bordo { background: linear-gradient(135deg, #5e111a 0%, #3a0a10 100%); }
         
-        /* Botão Flutuante Nativo */
         .btn-whatsapp-fixo {
             position: fixed; bottom: 20px; right: 20px; z-index: 1000;
             display: flex; align-items: center; justify-content: center;
@@ -56,15 +55,9 @@
                     Mais de 1.800 clientes atendidos em Bauru e região. Milhares de aposentados têm direito a revisões que podem aumentar o valor mensal e gerar o recebimento de atrasados.
                 </p>
                 <div class="space-y-4">
-                    <div class="flex items-center text-gray-300">
-                        <span class="text-red-600 mr-3 text-xl">✔</span> Aumento imediato no valor da mensalidade.
-                    </div>
-                    <div class="flex items-center text-gray-300">
-                        <span class="text-red-600 mr-3 text-xl">✔</span> Recebimento de valores retroativos.
-                    </div>
-                    <div class="flex items-center text-gray-300">
-                        <span class="text-red-600 mr-3 text-xl">✔</span> Análise técnica feita por especialistas.
-                    </div>
+                    <div class="flex items-center text-gray-300"><span class="text-red-600 mr-3 text-xl">✔</span> Aumento imediato no valor da mensalidade.</div>
+                    <div class="flex items-center text-gray-300"><span class="text-red-600 mr-3 text-xl">✔</span> Recebimento de valores retroativos.</div>
+                    <div class="flex items-center text-gray-300"><span class="text-red-600 mr-3 text-xl">✔</span> Análise técnica feita por especialistas.</div>
                 </div>
             </div>
 
@@ -72,8 +65,8 @@
                 <h3 class="text-2xl font-bold text-white mb-2">Solicitar Análise Gratuita</h3>
                 <p class="text-gray-400 text-sm mb-8">Preencha os dados e entraremos em contato via WhatsApp.</p>
                 
-                <form id="leadForm" class="space-y-4"> 
-            </form>
+                <form id="leadForm" class="space-y-4">
+                    <input type="hidden" name="origem" value="LP_REVISAO_APPSCRIPT">
 
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Nome Completo</label>
@@ -116,7 +109,7 @@
 
     <script>
         const form = document.getElementById('leadForm');
-        // Sua URL do Google Apps Script
+        // URL da sua implementação do Google Apps Script
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec';
 
         form.addEventListener('submit', e => {
@@ -127,19 +120,17 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    console.log('Sucesso!', response);
                     form.reset();
                     btn.classList.add('hidden');
                     document.getElementById('msgSucesso').classList.remove('hidden');
                 })
                 .catch(error => {
                     console.error('Erro!', error.message);
-                    alert('Erro ao enviar. Por favor, tente o botão do WhatsApp!');
+                    alert('Erro ao enviar. Por favor, tente o WhatsApp!');
                     btn.innerText = "Analisar meu caso agora";
                     btn.disabled = false;
                 });
         });
     </script>
-
 </body>
 </html>
