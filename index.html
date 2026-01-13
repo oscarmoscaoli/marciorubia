@@ -3,19 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Márcio Rubia | Advocacia Previdenciária e Trabalhista em Bauru</title>
+    <meta name="description" content="Márcio Rubia Advocacia em Bauru. Especialista em Ações contra o INSS, Aposentadorias e Direito do Trabalho com 16 anos de experiência.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
-        :root { --bordo: #5e111a; --fundo-escuro: #0a0f1d; }
+        :root {
+            --bordo: #5e111a;
+            --fundo-escuro: #0a0f1d; 
+            --card-escuro: #161e2d;
+        }
         body { background-color: var(--fundo-escuro); color: #e2e8f0; scroll-behavior: smooth; font-family: sans-serif; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .animar-texto { animation: fadeInUp 1s ease-out forwards; }
-        .hero-container { position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #161e2d 0%, var(--fundo-escuro) 100%); }
-        .card-interativo { transition: all 0.4s ease; border-bottom: 4px solid transparent; }
-        .card-interativo:hover { transform: translateY(-10px); background-color: #1c2639; border-bottom: 4px solid var(--bordo); }
-        .foto-equipe { transition: all 0.5s ease; filter: grayscale(100%); border: 2px solid #1f2937; }
-        .foto-equipe:hover { filter: grayscale(0%); transform: scale(1.05); border-color: var(--bordo); }
+        
+        /* Animação Suave do Banner */
+        @keyframes fadeInSlide {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animar-banner { animation: fadeInSlide 1.2s ease-out forwards; }
+
+        .hero-container {
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #161e2d 0%, var(--fundo-escuro) 100%);
+        }
+
+        /* Hover nas Áreas de Atuação e Blog */
+        .card-interativo {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom: 4px solid transparent;
+        }
+        .card-interativo:hover {
+            transform: translateY(-10px);
+            background-color: #1c2639;
+            border-bottom: 4px solid var(--bordo);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Hover nas Fotos da Equipe */
+        .foto-equipe {
+            transition: all 0.5s ease;
+            filter: grayscale(100%);
+            border: 2px solid #1f2937;
+        }
+        .foto-equipe:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+            border-color: var(--bordo);
+        }
+
+        /* FAQ Estilizado */
         details summary { list-style: none; outline: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
         details[open] summary { color: #ef4444; }
     </style>
 </head>
@@ -23,64 +68,128 @@
 
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium uppercase tracking-wider">
-            <img src="logo_branco.png" alt="Márcio Rubia" class="h-16">
-            <div class="hidden md:flex space-x-8 items-center">
+            <img src="logo_branco.png" alt="Márcio Rubia" class="h-16"> <div class="hidden md:flex space-x-8 items-center">
                 <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
                 <a href="#blog" class="hover:text-red-500 transition">Informativo</a>
                 <a href="#equipe" class="hover:text-red-500 transition">Equipe</a>
-                <a href="#faq" class="hover:text-red-500 transition">Dúvidas</a>
-                <a href="https://wa.me/5514988066737" class="bg-[#5e111a] text-white px-6 py-2 rounded font-bold text-xs">Entrar em contato</a>
+                <a href="#instagram" class="hover:text-red-500 transition">Instagram</a>
+                <a href="https://wa.me/5514988066737?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20consulta.%20(Origem:%20Menu_Site)" 
+                   class="bg-[#5e111a] text-white px-6 py-2 rounded font-bold text-xs uppercase tracking-widest transition hover:bg-red-900">
+                   Entrar em contato
+                </a>
             </div>
         </div>
     </nav>
 
     <section class="hero-container border-b border-gray-900">
-        <div class="container mx-auto px-6 animar-texto">
-            <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">16 Anos de Experiência</p>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white uppercase leading-tight">Advocacia em Ações contra o INSS e Revisão de Benefícios</h1>
-            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Mais de 1.800 clientes atendidos em Bauru e região.</p>
-            <a href="https://wa.me/5514988066737" class="bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition">Falar com Especialista</a>
+        <div class="container mx-auto px-6 animar-banner">
+            <div class="max-w-3xl mx-auto">
+                <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">16 Anos de Experiência</p>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white uppercase leading-tight">
+                    Advocacia em Ações contra o INSS e Revisão de Benefícios
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+                    Mais de 1.800 clientes atendidos com transparência e dedicação em Bauru e região.
+                </p>
+                <a href="https://wa.me/5514988066737?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20consulta.%20(Origem:%20Banner_Principal)" 
+                   class="inline-block bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition uppercase tracking-widest">
+                   Entrar em contato
+                </a>
+            </div>
         </div>
     </section>
 
     <section id="servicos" class="py-24">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 text-center text-white uppercase">Áreas de Atuação</h2>
+            <h2 class="text-3xl font-bold mb-16 text-center text-white uppercase tracking-tighter">Áreas de Atuação</h2>
             <div class="grid md:grid-cols-4 gap-6">
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3><p class="text-gray-400 text-sm">Especial, idade, rural e tempo de contribuição.</p></div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Benefícios</h3><p class="text-gray-400 text-sm">Auxílio-doença, maternidade e BPC/LOAS.</p></div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Revisões</h3><p class="text-gray-400 text-sm">Análise detalhada para aumentar sua renda mensal.</p></div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3><p class="text-gray-400 text-sm">Defesa integral contra irregularidades no contrato.</p></div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Especial, por idade, rural e tempo de contribuição.</p>
+                </div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Benefícios</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Auxílio-doença, auxílio-maternidade e BPC/LOAS.</p>
+                </div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Revisões</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Análise detalhada para garantir o valor máximo da sua renda.</p>
+                </div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Defesa integral contra irregularidades e rescisões indevidas.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="blog" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white uppercase mb-12">Informativo Jurídico</h2>
-            <div id="planilha-blog" class="grid md:grid-cols-3 gap-8">
+            <h2 class="text-3xl font-bold text-white uppercase mb-12 tracking-tighter text-center md:text-left">Informativo Jurídico</h2>
+            <div id="planilha-blog" class="grid md:grid-cols-3 gap-8 text-left">
                 <p class="text-gray-500">Buscando as últimas notícias...</p>
             </div>
         </div>
     </section>
 
-    <section id="equipe" class="py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-16 text-white uppercase">Nossa Equipe</h2>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div><img src="Marcio.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-4 object-cover"><h4 class="text-xl font-bold">Dr. Márcio Rubia</h4><p class="text-red-600 font-bold uppercase text-xs">Advogado Titular</p></div>
-                <div><img src="Carla.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-4 object-cover"><h4 class="text-xl font-bold">Carla Rodrigues</h4><p class="text-red-600 font-bold uppercase text-xs">Especialista</p></div>
-                <div><img src="Julia.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-4 object-cover"><h4 class="text-xl font-bold">Julia</h4><p class="text-red-600 font-bold uppercase text-xs">Atendimento</p></div>
+    <section id="instagram" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white uppercase mb-12 tracking-tighter text-center">Acompanhe no Instagram</h2>
+            <div class="max-w-5xl mx-auto rounded-lg overflow-hidden border border-gray-800 p-4 bg-[#070b14]">
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="//lightwidget.com/widgets/42ca54a8708a55619172aa45734fe3fa.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+            </div>
+            <div class="text-center mt-8">
+                <a href="https://www.instagram.com/advocaciarubia/" target="_blank" class="text-red-500 font-bold hover:underline uppercase text-sm tracking-widest">Acessar perfil completo</a>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-24 bg-[#070b14]">
+    <section id="equipe" class="py-24 bg-[#070b14]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Nossa Equipe</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <img src="Marcio.png" alt="Dr. Márcio Rubia" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover">
+                    <h4 class="text-xl font-bold text-white">Dr. Márcio Rubia</h4>
+                    <p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p>
+                </div>
+                <div>
+                    <img src="Carla.png" alt="Carla Rodrigues" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover">
+                    <h4 class="text-xl font-bold text-white">Carla Rodrigues</h4>
+                    <p class="text-red-600 text-sm font-bold uppercase">Especialista</p>
+                </div>
+                <div>
+                    <img src="Julia.png" alt="Julia" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover">
+                    <h4 class="text-xl font-bold text-white">Julia</h4>
+                    <p class="text-red-600 text-sm font-bold uppercase">Atendimento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase">Dúvidas Frequentes</h2>
+            <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
             <div class="space-y-4">
-                <details class="bg-[#161e2d] rounded shadow-lg group"><summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639]">Aposentadoria Especial <span class="text-red-600">+</span></summary><div class="px-6 pb-6 text-gray-400 text-sm pt-4">Analisamos seu PPP para garantir o tempo reduzido por agentes nocivos.</div></details>
-                <details class="bg-[#161e2d] rounded shadow-lg group"><summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639]">Revisão de Benefício <span class="text-red-600">+</span></summary><div class="px-6 pb-6 text-gray-400 text-sm pt-4">Verificamos se o INSS errou no cálculo para aumentar sua aposentadoria.</div></details>
+                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
+                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] transition cursor-pointer">
+                        Como funciona o pedido de Aposentadoria Especial?
+                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
+                        É destinada a trabalhadores expostos a agentes nocivos. Analisamos seu histórico para garantir o tempo reduzido conforme a lei.
+                    </div>
+                </details>
+                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
+                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] transition cursor-pointer">
+                        Posso pedir revisão do meu benefício?
+                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
+                        Sim. Se o INSS não considerou todos os seus salários ou períodos de trabalho, a revisão pode aumentar o valor mensal.
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -88,20 +197,25 @@
     <footer class="bg-black py-16 border-t border-gray-900">
         <div class="container mx-auto px-6 text-center md:text-left">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12">
-                <img src="logo_branco.png" class="h-16 mb-8 md:mb-0">
-                <div class="text-gray-500 text-sm space-y-2">
-                    <p class="font-bold text-white uppercase text-xs">Márcio Henrique Rubia OAB/SP 378.830</p>
+                <img src="logo_branco.png" alt="Márcio Rubia" class="h-16 mb-8 md:mb-0"> <div class="text-gray-500 text-sm space-y-2">
+                    <p class="font-bold text-white uppercase tracking-widest text-xs">Márcio Henrique Rubia OAB/SP 378.830</p>
                     <p>Edifício Comercial Clemente Faria - Sala 905</p>
-                    <p>Bauru - SP | (14) 98806-6737</p>
+                    <p>R. Rio Branco, 7-19 - Centro, Bauru - SP</p>
+                    <p>Segunda a Sexta: 09:00 – 17:00 | (14) 98806-6737</p>
                 </div>
             </div>
-            <p class="text-[10px] text-gray-600 text-center border-t border-gray-900 pt-8 uppercase tracking-widest">Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" class="text-red-900 hover:text-red-500 transition">Oscar Mosca</a></p>
+            <div class="border-t border-gray-900 pt-8 text-center text-[10px] text-gray-700 uppercase tracking-widest">
+                <p>Direitos Reservados &copy; 2026 Márcio Rubia Advocacia</p>
+                <p class="mt-4">
+                    Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900 hover:text-red-500 transition duration-300">Oscar Mosca</a>
+                </p>
+            </div>
         </div>
     </footer>
 
     <script>
         async function loadSheet() {
-            const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&single=true&output=csv'; // <--- COLE O LINK CSV AQUI
+            const url = 'LINK_DA_SUA_PLANILHA_AQUI'; // <--- COLE O LINK CSV AQUI
             try {
                 const response = await fetch(url);
                 const data = await response.text();
@@ -111,10 +225,16 @@
                 rows.forEach(row => {
                     const columns = row.split(',');
                     if(columns.length >= 3) {
-                        container.innerHTML += `<div class="card-interativo bg-[#161e2d] p-6 rounded"><span class="text-xs text-red-500 font-bold uppercase">${columns[1]}</span><h4 class="text-xl font-bold text-white mt-2 mb-4">${columns[0]}</h4><p class="text-gray-400 text-sm">${columns[2]}</p></div>`;
+                        container.innerHTML += `
+                            <article class="card-interativo bg-[#161e2d] p-6 rounded">
+                                <span class="text-xs text-red-500 font-bold uppercase tracking-widest">${columns[1]}</span>
+                                <h4 class="text-xl font-bold text-white mt-2 mb-4 leading-tight">${columns[0]}</h4>
+                                <p class="text-gray-400 text-sm">${columns[2]}</p>
+                            </article>
+                        `;
                     }
                 });
-            } catch (e) { document.getElementById('planilha-blog').innerHTML = 'Planilha não encontrada.'; }
+            } catch (e) { document.getElementById('planilha-blog').innerHTML = 'Informativo temporariamente indisponível.'; }
         }
         loadSheet();
     </script>
