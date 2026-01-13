@@ -1,68 +1,122 @@
-<section id="faq" class="py-24 bg-[#070b14]">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Márcio Rubia | Advocacia Previdenciária e Trabalhista em Bauru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --bordo: #5e111a; --fundo-escuro: #0a0f1d; }
+        body { background-color: var(--fundo-escuro); color: #e2e8f0; scroll-behavior: smooth; font-family: sans-serif; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animar-texto { animation: fadeInUp 1s ease-out forwards; }
+        .hero-container { position: relative; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #161e2d 0%, var(--fundo-escuro) 100%); }
+        .card-interativo { transition: all 0.4s ease; border-bottom: 4px solid transparent; }
+        .card-interativo:hover { transform: translateY(-10px); background-color: #1c2639; border-bottom: 4px solid var(--bordo); }
+        .foto-equipe { transition: all 0.5s ease; filter: grayscale(100%); border: 2px solid #1f2937; }
+        .foto-equipe:hover { filter: grayscale(0%); transform: scale(1.05); border-color: var(--bordo); }
+        details summary { list-style: none; outline: none; cursor: pointer; }
+        details[open] summary { color: #ef4444; }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium uppercase tracking-wider">
+            <img src="logo_branco.png" alt="Márcio Rubia" class="h-16">
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
+                <a href="#blog" class="hover:text-red-500 transition">Informativo</a>
+                <a href="#equipe" class="hover:text-red-500 transition">Equipe</a>
+                <a href="#faq" class="hover:text-red-500 transition">Dúvidas</a>
+                <a href="https://wa.me/5514988066737" class="bg-[#5e111a] text-white px-6 py-2 rounded font-bold text-xs">Entrar em contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-container border-b border-gray-900">
+        <div class="container mx-auto px-6 animar-texto">
+            <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">16 Anos de Experiência</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white uppercase leading-tight">Advocacia em Ações contra o INSS e Revisão de Benefícios</h1>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Mais de 1.800 clientes atendidos em Bauru e região.</p>
+            <a href="https://wa.me/5514988066737" class="bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition">Falar com Especialista</a>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-white uppercase">Áreas de Atuação</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3><p class="text-gray-400 text-sm">Especial, idade, rural e tempo de contribuição.</p></div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Benefícios</h3><p class="text-gray-400 text-sm">Auxílio-doença, maternidade e BPC/LOAS.</p></div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Revisões</h3><p class="text-gray-400 text-sm">Análise detalhada para aumentar sua renda mensal.</p></div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3><p class="text-gray-400 text-sm">Defesa integral contra irregularidades no contrato.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-24 bg-[#070b14]">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white uppercase mb-12">Informativo Jurídico</h2>
+            <div id="planilha-blog" class="grid md:grid-cols-3 gap-8">
+                <p class="text-gray-500">Buscando as últimas notícias...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 text-white uppercase">Nossa Equipe</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div><img src="Marcio.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-4 object-cover"><h4 class="text-xl font-bold">Dr. Márcio Rubia</h4><p class="text-red-600 font-bold uppercase text-xs">Advogado Titular</p></div>
+                <div><img src="Carla.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-4 object-cover"><h4 class="text-xl font-bold">Carla Rodrigues</h4><p class="text-red-600 font-bold uppercase text-xs">Especialista</p></div>
+                <div><img src="Julia.png" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-4 object-cover"><h4 class="text-xl font-bold">Julia</h4><p class="text-red-600 font-bold uppercase text-xs">Atendimento</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
+            <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase">Dúvidas Frequentes</h2>
             <div class="space-y-4">
-                
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
-                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] cursor-pointer transition">
-                        Como funciona o pedido de Aposentadoria Especial?
-                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
-                        É destinada a quem trabalhou exposto a agentes nocivos (químicos, físicos ou biológicos). Analisamos o PPP e o LTCAT para converter esse tempo e adiantar sua aposentadoria ou aumentar o valor.
-                    </div>
-                </details>
-
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
-                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] cursor-pointer transition">
-                        O que é a Revisão da Vida Toda?
-                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
-                        É uma análise que permite incluir salários de contribuição anteriores a julho de 1994 no cálculo do benefício. É ideal para quem ganhava bem antes do Plano Real e se aposentou nos últimos 10 anos.
-                    </div>
-                </details>
-
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
-                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] cursor-pointer transition">
-                        Tive meu auxílio-doença negado pelo INSS. O que fazer?
-                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
-                        Muitas vezes a perícia do INSS é superficial. Podemos ingressar com uma ação judicial onde você será avaliado por um perito especialista nomeado pelo juiz, aumentando as chances de concessão.
-                    </div>
-                </details>
-
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg group">
-                    <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639] cursor-pointer transition">
-                        Fui demitido e não recebi minhas verbas. Quais meus direitos?
-                        <span class="text-red-600 text-2xl group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4 leading-relaxed">
-                        Você tem direito ao saldo de salário, aviso prévio, férias proporcionais, 13º e a multa de 40% do FGTS. Se houver irregularidades, entramos com a Reclamação Trabalhista para garantir o pagamento.
-                    </div>
-                </details>
-
+                <details class="bg-[#161e2d] rounded shadow-lg group"><summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639]">Aposentadoria Especial <span class="text-red-600">+</span></summary><div class="px-6 pb-6 text-gray-400 text-sm pt-4">Analisamos seu PPP para garantir o tempo reduzido por agentes nocivos.</div></details>
+                <details class="bg-[#161e2d] rounded shadow-lg group"><summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639]">Revisão de Benefício <span class="text-red-600">+</span></summary><div class="px-6 pb-6 text-gray-400 text-sm pt-4">Verificamos se o INSS errou no cálculo para aumentar sua aposentadoria.</div></details>
             </div>
         </div>
     </section>
 
     <footer class="bg-black py-16 border-t border-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <img src="logo_branco.png" alt="Márcio Rubia" class="h-16 mb-8 md:mb-0">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <img src="logo_branco.png" class="h-16 mb-8 md:mb-0">
                 <div class="text-gray-500 text-sm space-y-2">
-                    <p class="font-bold text-white uppercase tracking-widest text-xs">Márcio Henrique Rubia OAB/SP 378.830</p>
+                    <p class="font-bold text-white uppercase text-xs">Márcio Henrique Rubia OAB/SP 378.830</p>
                     <p>Edifício Comercial Clemente Faria - Sala 905</p>
-                    <p>R. Rio Branco, 7-19 - Centro, Bauru - SP</p>
-                    <p>Segunda a Sexta: 09:00 – 17:00 | (14) 98806-6737</p>
+                    <p>Bauru - SP | (14) 98806-6737</p>
                 </div>
             </div>
-            <div class="border-t border-gray-900 mt-12 pt-8 text-center text-[10px] text-gray-600 uppercase tracking-widest">
-                <p>Direitos Reservados &copy; 2026 Márcio Rubia Advocacia</p>
-                <p class="mt-4">
-                    Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" class="text-red-900 hover:text-red-500 transition duration-300">Oscar Mosca</a>
-                </p>
-            </div>
+            <p class="text-[10px] text-gray-600 text-center border-t border-gray-900 pt-8 uppercase tracking-widest">Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" class="text-red-900 hover:text-red-500 transition">Oscar Mosca</a></p>
         </div>
     </footer>
+
+    <script>
+        async function loadSheet() {
+            const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&single=true&output=csv'; // <--- COLE O LINK CSV AQUI
+            try {
+                const response = await fetch(url);
+                const data = await response.text();
+                const rows = data.split('\n').slice(1);
+                const container = document.getElementById('planilha-blog');
+                container.innerHTML = '';
+                rows.forEach(row => {
+                    const columns = row.split(',');
+                    if(columns.length >= 3) {
+                        container.innerHTML += `<div class="card-interativo bg-[#161e2d] p-6 rounded"><span class="text-xs text-red-500 font-bold uppercase">${columns[1]}</span><h4 class="text-xl font-bold text-white mt-2 mb-4">${columns[0]}</h4><p class="text-gray-400 text-sm">${columns[2]}</p></div>`;
+                    }
+                });
+            } catch (e) { document.getElementById('planilha-blog').innerHTML = 'Planilha não encontrada.'; }
+        }
+        loadSheet();
+    </script>
+</body>
+</html>
