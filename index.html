@@ -17,56 +17,63 @@
         }
         body { background-color: var(--fundo-escuro); color: #e2e8f0; scroll-behavior: smooth; font-family: sans-serif; }
         
-        /* Ajuste do Martelo no Banner conforme referência */
+        /* Animação do Banner Principal */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animar-texto { animation: fadeInUp 1s ease-out forwards; }
+
+        /* Banner sem martelo */
         .hero-container {
             position: relative;
             min-height: 500px;
             display: flex;
             align-items: center;
-            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #161e2d 0%, var(--fundo-escuro) 100%);
         }
-        .martelo-bg {
-            position: absolute;
-            right: -5%;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 90%;
-            z-index: 1;
-            opacity: 0.3; /* Ajuste de visibilidade */
-            pointer-events: none;
-        }
-        .hero-content { position: relative; z-index: 2; }
 
-        /* Hover nas Áreas de Atuação */
-        .card-atuacao {
+        /* Hover nas Áreas de Atuação e Blog */
+        .card-interativo {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-bottom: 4px solid transparent;
         }
-        .card-atuacao:hover {
+        .card-interativo:hover {
             transform: translateY(-10px);
             background-color: #1c2639;
             border-bottom: 4px solid var(--bordo);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* FAQ Estilizado */
+        /* Hover na Equipe */
+        .foto-equipe {
+            transition: all 0.5s ease;
+            filter: grayscale(100%);
+        }
+        .foto-equipe:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+            border-color: var(--bordo);
+        }
+
+        /* FAQ Expansível */
         details summary { list-style: none; outline: none; cursor: pointer; }
         details summary::-webkit-details-marker { display: none; }
         details[open] summary { color: #ef4444; }
-        details { transition: all 0.3s ease; }
     </style>
 </head>
 <body>
 
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="logo_branco.png" alt="Márcio Rubia" class="h-10">
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#servicos" class="text-sm font-medium hover:text-red-500 transition">Serviços</a>
-                <a href="#equipe" class="text-sm font-medium hover:text-red-500 transition">Equipe</a>
-                <a href="#faq" class="text-sm font-medium hover:text-red-500 transition">Dúvidas</a>
+            <img src="logo_branco.png" alt="Márcio Rubia" class="h-14"> <div class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider">
+                <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
+                <a href="#blog" class="hover:text-red-500 transition">Blog</a>
+                <a href="#equipe" class="hover:text-red-500 transition">Equipe</a>
+                <a href="#faq" class="hover:text-red-500 transition">Dúvidas</a>
                 <a href="https://wa.me/5514988066737?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20consulta.%20(Origem:%20Menu_Site)" 
-                   class="bg-[#5e111a] text-white px-6 py-2 rounded shadow-lg hover:bg-red-900 transition font-bold uppercase text-xs tracking-widest">
+                   class="bg-[#5e111a] text-white px-6 py-2 rounded shadow-lg hover:bg-red-900 transition font-bold text-xs">
                    Entrar em contato
                 </a>
             </div>
@@ -74,13 +81,13 @@
     </nav>
 
     <section class="hero-container border-b border-gray-900">
-        <div class="container mx-auto px-6 hero-content">
-            <div class="max-w-2xl">
+        <div class="container mx-auto px-6 animar-texto">
+            <div class="max-w-3xl mx-auto">
                 <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">16 Anos de Experiência</p>
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white">
                     Advocacia especializada em Ações contra o INSS e Revisão de Benefícios
                 </h1>
-                <p class="text-lg text-gray-400 mb-10">
+                <p class="text-lg md:text-xl text-gray-400 mb-10">
                     Mais de 1.800 clientes atendidos com transparência e dedicação em Bauru e região.
                 </p>
                 <a href="https://wa.me/5514988066737?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20uma%20consulta.%20(Origem:%20Banner_Principal)" 
@@ -89,26 +96,25 @@
                 </a>
             </div>
         </div>
-        <img src="martelo.png" alt="" class="martelo-bg">
     </section>
 
     <section id="servicos" class="py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
-            <div class="grid md:grid-cols-4 gap-6 text-left">
-                <div class="card-atuacao bg-[#161e2d] p-8 rounded shadow-2xl">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Especial, por idade, rural e tempo de contribuição. Planejamos o melhor benefício para você.</p>
                 </div>
-                <div class="card-atuacao bg-[#161e2d] p-8 rounded shadow-2xl">
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Benefícios</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Auxílio-doença, auxílio-maternidade e BPC/LOAS. Proteção rápida para quem mais precisa.</p>
                 </div>
-                <div class="card-atuacao bg-[#161e2d] p-8 rounded shadow-2xl">
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Revisões</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Análise criteriosa de benefícios já concedidos para garantir o valor máximo da sua renda.</p>
                 </div>
-                <div class="card-atuacao bg-[#161e2d] p-8 rounded shadow-2xl">
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Defesa integral dos direitos do trabalhador contra irregularidades e rescisões indevidas.</p>
                 </div>
@@ -121,17 +127,17 @@
             <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Nossa Equipe</h2>
             <div class="grid md:grid-cols-3 gap-12">
                 <div>
-                    <img src="Marcio.png" alt="Dr. Márcio Rubia" class="w-48 h-48 mx-auto rounded-full mb-6 border-2 border-[#5e111a] object-cover grayscale">
+                    <img src="Marcio.png" alt="Dr. Márcio Rubia" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 border-2 border-gray-800 object-cover">
                     <h4 class="text-xl font-bold text-white">Dr. Márcio Rubia</h4>
                     <p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p>
                 </div>
                 <div>
-                    <img src="Carla.png" alt="Carla Rodrigues" class="w-48 h-48 mx-auto rounded-full mb-6 border-2 border-[#5e111a] object-cover grayscale">
+                    <img src="Carla.png" alt="Carla Rodrigues" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 border-2 border-gray-800 object-cover">
                     <h4 class="text-xl font-bold text-white">Carla Rodrigues</h4>
                     <p class="text-red-600 text-sm font-bold uppercase">Especialista</p>
                 </div>
                 <div>
-                    <img src="Julia.png" alt="Julia" class="w-48 h-48 mx-auto rounded-full mb-6 border-2 border-[#5e111a] object-cover grayscale">
+                    <img src="Julia.png" alt="Julia" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 border-2 border-gray-800 object-cover">
                     <h4 class="text-xl font-bold text-white">Julia</h4>
                     <p class="text-red-600 text-sm font-bold uppercase">Atendimento</p>
                 </div>
@@ -139,23 +145,49 @@
         </div>
     </section>
 
-    <section id="faq" class="py-24">
+    <section id="blog" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white uppercase tracking-tighter mb-12">Informativo Jurídico</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="card-interativo bg-[#161e2d] p-6 rounded">
+                    <span class="text-xs text-red-500 font-bold">PREVIDENCIÁRIO</span>
+                    <h4 class="text-xl font-bold text-white mt-2 mb-4">Mudanças na Aposentadoria</h4>
+                    <p class="text-gray-400 text-sm mb-6">Confira as novas regras de transição vigentes.</p>
+                    <a href="#" class="text-white font-bold text-sm border-b border-red-800 pb-1">Ler mais</a>
+                </article>
+                <article class="card-interativo bg-[#161e2d] p-6 rounded">
+                    <span class="text-xs text-red-500 font-bold">TRABALHISTA</span>
+                    <h4 class="text-xl font-bold text-white mt-2 mb-4">Verbas Rescisórias</h4>
+                    <p class="text-gray-400 text-sm mb-6">Saiba o que deve ser pago na sua demissão.</p>
+                    <a href="#" class="text-white font-bold text-sm border-b border-red-800 pb-1">Ler mais</a>
+                </article>
+                <article class="card-interativo bg-[#161e2d] p-6 rounded">
+                    <span class="text-xs text-red-500 font-bold">DICAS</span>
+                    <h4 class="text-xl font-bold text-white mt-2 mb-4">Documentação INSS</h4>
+                    <p class="text-gray-400 text-sm mb-6">Documentos essenciais para evitar negativas.</p>
+                    <a href="#" class="text-white font-bold text-sm border-b border-red-800 pb-1">Ler mais</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
             <div class="space-y-4">
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg">
+                <details class="bg-[#161e2d] rounded overflow-hidden">
                     <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639]">
                         Como funciona a Aposentadoria Especial?
-                        <span class="text-red-600">+</span>
+                        <span class="text-red-600 font-serif">+</span>
                     </summary>
                     <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4">
                         Destinada a trabalhadores expostos a agentes nocivos. Analisamos seu histórico para garantir o tempo reduzido conforme a lei.
                     </div>
                 </details>
-                <details class="bg-[#161e2d] rounded overflow-hidden shadow-lg">
+                <details class="bg-[#161e2d] rounded overflow-hidden">
                     <summary class="p-6 font-bold flex justify-between items-center hover:bg-[#1c2639]">
                         Posso pedir revisão do meu benefício?
-                        <span class="text-red-600">+</span>
+                        <span class="text-red-600 font-serif">+</span>
                     </summary>
                     <div class="px-6 pb-6 text-gray-400 text-sm border-t border-gray-800 pt-4">
                         Sim. Se o INSS não considerou todos os seus salários ou períodos de trabalho, a revisão pode aumentar o valor mensal.
@@ -166,16 +198,20 @@
     </section>
 
     <footer class="bg-black py-16 border-t border-gray-900">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-            <div>
-                <p class="font-bold text-white mb-4 uppercase text-sm tracking-widest">Márcio Henrique Rubia OAB/SP 378.830</p>
-                <p class="text-gray-500 text-sm">Edifício Comercial Clemente Faria - Sala 905</p>
-                <p class="text-gray-500 text-sm">R. Rio Branco, 7-19 - Centro, Bauru - SP</p>
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <img src="logo_branco.png" alt="Márcio Rubia" class="h-14 mb-8 md:mb-0"> <div class="text-center md:text-right text-gray-500 text-sm">
+                    <p class="font-bold text-white uppercase mb-2">Márcio Henrique Rubia OAB/SP 378.830</p>
+                    <p>Edifício Comercial Clemente Faria - Sala 905</p>
+                    <p>R. Rio Branco, 7-19 - Centro, Bauru - SP</p>
+                    <p class="mt-2">Telefone: (14) 98806-6737</p>
+                </div>
             </div>
-            <div class="md:text-right text-gray-500 text-sm">
-                <p class="mb-2">Segunda a Sexta: 09:00 – 17:00</p>
-                <p class="mb-2">Telefone: (14) 98806-6737</p>
-                <p>E-mail: contato@marciorubia.adv.br</p>
+            <div class="border-t border-gray-900 pt-8 text-center text-xs text-gray-600">
+                <p>Direitos Reservados &copy; 2026 Márcio Rubia Advocacia</p>
+                <p class="mt-2 uppercase tracking-widest">
+                    Criado por <a href="http://resume.oscarmosca.com.br" class="text-red-900 hover:text-red-500 transition">Oscar Mosca</a>
+                </p>
             </div>
         </div>
     </footer>
