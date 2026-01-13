@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Márcio Rubia | Advocacia Previdenciária e Trabalhista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bordo: #5e111a;
+            --azul-escuro: #0a1a2f;
+        }
+        .bg-bordo { background-color: var(--bordo); }
+        .text-bordo { color: var(--bordo); }
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--azul-escuro) 0%, #1a2a44 100%);
+        }
+        .overlay-hammer {
+            background-image: url('caminho-da-sua-imagem-martelo.png'); /* Substituir pelo nome do arquivo */
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="logo_100_branco.png" alt="Márcio Rubia" class="h-12 brightness-0"> <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="#inicio" class="hover:text-red-800">Início</a>
+                <a href="#servicos" class="hover:text-red-800">Serviços</a>
+                <a href="#sobre" class="hover:text-red-800">Sobre</a>
+                <a href="https://wa.me/5514988066737" class="bg-bordo text-white px-5 py-2 rounded shadow-lg hover:bg-red-900 transition">Entrar em contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-gradient text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 overlay-hammer"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Advocacia especializada em Ações contra o INSS e Revisão de Benefícios</h1>
+                <p class="text-xl mb-8 text-gray-300">16 anos de experiência e mais de 1800 clientes atendidos com transparência e resultados.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/5514988066737" class="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">Entrar em contato</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Nossas Áreas de Atuação</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-red-800 hover:shadow-xl transition">
+                    <i class="fas fa-user-shield text-4xl text-bordo mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Aposentadoria</h3>
+                    <p class="text-gray-600 text-sm">Especial, por idade, rural e tempo de contribuição.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-red-800 hover:shadow-xl transition">
+                    <i class="fas fa-hand-holding-medical text-4xl text-bordo mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Benefícios</h3>
+                    <p class="text-gray-600 text-sm">Auxílio-doença, maternidade e BPC/LOAS.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-red-800 hover:shadow-xl transition">
+                    <i class="fas fa-file-invoice-dollar text-4xl text-bordo mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Revisões</h3>
+                    <p class="text-gray-600 text-sm">Análise e revisão de benefícios para aumentar sua renda.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-red-800 hover:shadow-xl transition">
+                    <i class="fas fa-gavel text-4xl text-bordo mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Trabalhista</h3>
+                    <p class="text-gray-600 text-sm">Defesa integral dos seus direitos no trabalho.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-white font-bold mb-4">Márcio Rubia Advocacia</h4>
+                <p class="text-sm">Edifício Comercial Clemente Faria<br>R. Rio Branco, 7-19 - sala 905<br>Bauru - SP</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Atendimento</h4>
+                <p class="text-sm">Segunda a Sexta: 09:00 – 17:00</p>
+                <p class="text-sm">Telefone: (14) 98806-6737</p>
+            </div>
+            <div class="flex space-x-4 text-2xl">
+                <a href="https://www.instagram.com/advocaciarubia/" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5514988066737" class="hover:text-white"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
