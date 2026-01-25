@@ -191,24 +191,45 @@
     </section>
 
     <footer class="bg-black py-16 border-t border-gray-900 text-center">
-        <div class="container mx-auto px-6">
-            <img src="logo_branco.png" class="h-16 mx-auto mb-8">
-            <p class="text-gray-500 text-sm uppercase tracking-widest mb-4">Márcio Henrique Rubia OAB/SP 378.830</p>
-            
-            <a href="https://maps.app.goo.gl/GYvrkVxnv5QRTAUB7" target="_blank" class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-2 leading-relaxed">
-                Edifício Comercial Clemente Faria<br>
-                R. Rio Branco, 7-19 - sala 905 - Centro, Bauru - SP
-            </a>
-            
-            <p class="text-gray-500 text-sm uppercase mb-8">(14) 98806-6737</p>
-            
-            <div class="max-w-3xl mx-auto rounded-lg overflow-hidden border border-gray-800 mb-8 shadow-2xl">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.8444857390123!2d-49.07211667574547!3d-22.32172048682492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769378295986!5m2!1spt-BR!2sbr" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-            <p class="text-gray-700 text-[10px] mt-8 uppercase tracking-widest">Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900">Oscar Mosca</a></p>
+    <div class="container mx-auto px-6">
+        <img src="logo_branco.png" class="h-16 mx-auto mb-8">
+        
+        <a href="https://www.google.com/maps/place/Advocacia+Rubi%C3%A1/@-22.327663,-49.072233,17z/data=!4m6!3m5!1s0x94bf6d5c91eb8b19:0x7de56edb6201054c!8m2!3d-22.327663!4d-49.072233!16s%2Fg%2F11f_z7yf_f" 
+           target="_blank" 
+           class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-2 leading-relaxed">
+            Edifício Comercial Clemente Faria<br>
+            R. Rio Branco, 7-19 - sala 905 - Centro, Bauru - SP
+        </a>
+        
+        <p class="text-gray-500 text-sm uppercase mb-8">(14) 98806-6737</p>
+        
+        <div class="mx-auto rounded-lg overflow-hidden border border-gray-800 mb-8 shadow-2xl" 
+             style="max-width: 1000px; width: 100%;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0125211910634!2d-49.072233000000004!3d-22.327663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf6d5c91eb8b19%3A0x7de56edb6201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1706220000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="500" 
+                style="border:0; display: block;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                class="mapa-iframe">
+            </iframe>
         </div>
-    </footer>
+
+        <p class="text-gray-700 text-[10px] mt-8 uppercase tracking-widest">
+            Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900">Oscar Mosca</a>
+        </p>
+    </div>
+</footer>
+
+<style>
+    /* Ajuste de altura para mobile para o mapa não ficar muito "esticado" verticalmente */
+    @media (max-width: 768px) {
+        iframe[height="500"] {
+            height: 300px;
+        }
+    }
+</style>
 
     <script>
         async function loadFromSheet(url, targetId, isFAQ = false) {
