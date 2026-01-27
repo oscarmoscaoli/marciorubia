@@ -25,17 +25,31 @@
         :root { --bordo: #5e111a; --fundo-escuro: #0a0f1d; --card-escuro: #161e2d; }
         body { background-color: var(--fundo-escuro); color: #e2e8f0; scroll-behavior: smooth; font-family: sans-serif; }
         
+        /* Botão WhatsApp Fixo */
         .btn-whatsapp-fixo {
-            position: fixed; bottom: 20px; right: 20px; z-index: 3000;
-            display: flex; align-items: center; justify-content: center;
-            background-color: #25d366; color: white; border-radius: 50px;
-            padding: 12px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            text-decoration: none; font-weight: bold; font-size: 14px;
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 3000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            background-color: #25d366; 
+            color: white; 
+            border-radius: 50px;
+            padding: 12px 24px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 14px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .btn-whatsapp-fixo:hover { transform: scale(1.05); background-color: #20ba5a; }
 
-        body:not(.cookies-accepted) .btn-whatsapp-fixo { bottom: 120px; }
+        /* Ajuste para não sobrepor banner de cookies */
+        body:not(.cookies-accepted) .btn-whatsapp-fixo {
+            bottom: 120px; 
+        }
 
         .card-interativo {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -49,11 +63,21 @@
         .foto-equipe { transition: all 0.5s ease; filter: grayscale(100%); border: 2px solid #1f2937; }
         .foto-equipe:hover { filter: grayscale(0%); transform: scale(1.05); border-color: var(--bordo); }
 
+        /* UI Calculadora */
+        .input-calc {
+            width: 100%; background-color: #0a0f1d; border: 1px solid #1f2937; 
+            padding: 1rem; border-radius: 0.5rem; color: white; outline: none;
+            transition: border-color 0.3s;
+        }
+        .input-calc:focus { border-color: #5e111a; }
+
         details summary { list-style: none; outline: none; cursor: pointer; }
         details summary::-webkit-details-marker { display: none; }
         details[open] summary { color: #ef4444; }
 
-        @media (max-width: 768px) { iframe[height="600"] { height: 350px; } }
+        @media (max-width: 768px) { 
+            iframe[height="600"] { height: 350px; }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -65,7 +89,7 @@
 
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium uppercase tracking-wider">
-            <img src="logo_branco.png" alt="Logotipo Advocacia Rubiá" width="250" style="height: auto;" class="h-16 md:h-20 object-contain">
+            <img src="logo_branco.png" alt="Logotipo Advocacia Rubiá" width="150" style="height: auto;" class="object-contain">
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
                 <a href="#blog" class="hover:text-red-500 transition">Informativo</a>
@@ -120,45 +144,51 @@
     <section id="calculadora" class="py-24 border-t border-gray-900">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="bg-[#161e2d] p-10 rounded-xl border border-gray-800 shadow-2xl">
-                <h2 class="text-3xl font-bold text-white mb-4 uppercase text-center tracking-tighter">Simulador de Aposentadoria</h2>
-                <p class="text-gray-400 text-center mb-10 text-sm uppercase tracking-widest">Descubra quanto tempo falta para o seu benefício</p>
+                <h2 class="text-3xl font-bold text-white mb-2 uppercase text-center tracking-tighter">Simulador de Aposentadoria</h2>
+                <p class="text-gray-400 text-center mb-10 text-xs uppercase tracking-widest">Estimativa baseada na regra geral</p>
 
                 <div id="simulador-container">
-                    <div id="passo-calculo" class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-4 text-left">
-                            <label class="text-white text-xs font-bold uppercase">Gênero</label>
-                            <select id="calc-genero" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none focus:border-red-600">
-                                <option value="M">Masculino</option>
-                                <option value="F">Feminino</option>
-                            </select>
-                            <label class="text-white text-xs font-bold uppercase">Idade Atual</label>
-                            <input type="number" id="calc-idade" placeholder="Ex: 45" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
+                    <div id="passo-calculo" class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="text-white text-xs font-bold uppercase mb-2 block">Gênero</label>
+                                <select id="calc-genero" class="input-calc">
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Feminino</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-white text-xs font-bold uppercase mb-2 block">Idade Atual</label>
+                                <input type="number" id="calc-idade" placeholder="Ex: 45" class="input-calc">
+                            </div>
                         </div>
-                        <div class="space-y-4 text-left flex flex-col">
-                            <label class="text-white text-xs font-bold uppercase">Tempo de Contribuição (Anos)</label>
-                            <input type="number" id="calc-tempo" placeholder="Ex: 20" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none mb-4">
-                            <button onclick="liberarCaptura()" class="w-full bg-red-900/20 border border-red-900 text-white font-bold py-4 uppercase tracking-widest hover:bg-red-900 transition">Ver Resultado</button>
+                        <div class="space-y-6 flex flex-col justify-between">
+                            <div>
+                                <label class="text-white text-xs font-bold uppercase mb-2 block">Tempo de Contribuição (Anos)</label>
+                                <input type="number" id="calc-tempo" placeholder="Ex: 20" class="input-calc">
+                            </div>
+                            <button onclick="liberarCaptura()" class="w-full bg-[#5e111a]/20 border border-[#5e111a] text-white font-bold py-4 rounded uppercase tracking-widest hover:bg-[#5e111a] transition-all">Ver Resultado Grátis</button>
                         </div>
                     </div>
 
-                    <div id="passo-captura" class="hidden mt-8 pt-8 border-t border-gray-800">
-                        <h3 class="text-white font-bold mb-6 uppercase text-center text-sm">Preencha para liberar o resultado gratuito</h3>
+                    <div id="passo-captura" class="hidden mt-10 pt-10 border-t border-gray-800">
+                        <h3 class="text-white font-bold mb-8 uppercase text-center text-sm tracking-widest">Informe os dados para liberar o cálculo</h3>
                         <form id="calc-lead-form" class="grid grid-cols-1 gap-4 max-w-md mx-auto">
-                            <input type="text" id="calc-nome" placeholder="Seu Nome Completo" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
-                            <input type="tel" id="calc-tel" placeholder="Seu WhatsApp" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
-                            <input type="email" id="calc-email" placeholder="Seu melhor E-mail" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
-                            <label class="flex items-start gap-3 text-gray-400 text-xs cursor-pointer text-left">
+                            <input type="text" id="calc-nome" placeholder="Nome Completo" required class="input-calc">
+                            <input type="tel" id="calc-tel" placeholder="WhatsApp" required class="input-calc">
+                            <input type="email" id="calc-email" placeholder="E-mail" required class="input-calc">
+                            <label class="flex items-start gap-3 text-gray-400 text-xs cursor-pointer p-2">
                                 <input type="checkbox" required class="mt-1 accent-red-600">
                                 <span>Aceito receber informativos jurídicos de acordo com a LGPD.</span>
                             </label>
-                            <button type="submit" class="bg-[#5e111a] text-white py-4 rounded font-bold uppercase tracking-widest hover:bg-red-900 transition">Calcular Agora</button>
+                            <button type="submit" class="bg-[#5e111a] text-white py-4 rounded font-bold uppercase tracking-widest hover:bg-red-900 shadow-lg transition-all">Calcular Agora</button>
                         </form>
                     </div>
 
-                    <div id="passo-resultado" class="hidden mt-8 p-6 bg-red-900/10 border border-red-900 rounded text-center">
-                        <h4 class="text-white font-bold text-xl mb-2">Resultado Estimado</h4>
+                    <div id="passo-resultado" class="hidden mt-10 p-8 bg-red-900/10 border border-red-900/40 rounded-lg text-center">
+                        <h4 class="text-white font-bold text-xl mb-3">Resultado Estimado</h4>
                         <p id="calc-texto-resultado" class="text-gray-300 leading-relaxed"></p>
-                        <a href="https://wa.me/5514988066737" class="inline-block mt-6 text-red-500 font-bold uppercase text-xs border-b border-red-500 pb-1">Validar cálculo com especialista →</a>
+                        <a href="https://wa.me/5514988066737" class="mt-6 inline-block text-red-500 font-bold uppercase text-xs border-b border-red-500 pb-1 hover:text-red-400 transition">Validar cálculo no WhatsApp →</a>
                     </div>
                 </div>
             </div>
@@ -190,7 +220,7 @@
             <h2 class="text-3xl font-bold text-white mb-12 uppercase tracking-tighter">O que dizem nossos clientes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-16">
                 <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full">
-                    <p class="text-gray-400 mb-6 text-sm">"Excelente profissional, muito atencioso e resolveu meu problema com a aposentadoria rapidamente."</p>
+                    <p class="text-gray-400 mb-6 text-sm">"Excelente profissional, muito atencioso e resolveu meu problema rapidamente."</p>
                     <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">A. Santos - Bauru/SP</span></div>
                 </div>
                 <div class="bg-[#161e2d] p-8 rounded-xl border border-red-900/30 italic flex flex-col justify-between h-full shadow-2xl md:scale-105">
@@ -206,18 +236,41 @@
         </div>
     </section>
 
+    <section id="contato" class="py-24">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <div class="bg-[#161e2d] p-10 rounded-xl border border-gray-800 shadow-2xl">
+                <h2 class="text-3xl font-bold text-white mb-6 uppercase">Fale com um Especialista</h2>
+                <form id="mainContactForm" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                    <input type="hidden" name="origem" value="SITE_PRINCIPAL">
+                    <div class="space-y-4">
+                        <input type="text" name="nome" placeholder="Seu Nome" required class="input-calc">
+                        <input type="tel" id="whatsappMain" name="whatsapp" placeholder="WhatsApp" required class="input-calc">
+                        <input type="text" name="assunto" placeholder="Assunto" required class="input-calc">
+                    </div>
+                    <div class="space-y-4 flex flex-col">
+                        <textarea name="mensagem" placeholder="Como podemos ajudar?" class="input-calc flex-grow min-h-[150px]"></textarea>
+                    </div>
+                    <button type="submit" id="btnMainEnviar" class="md:col-span-2 bg-[#5e111a] text-white py-5 rounded font-bold uppercase tracking-widest hover:bg-red-900 transition shadow-lg">Enviar Mensagem</button>
+                </form>
+                <div id="mainMsgSucesso" class="hidden bg-green-900/30 text-green-400 p-4 rounded font-bold mt-4 border border-green-800 text-center">Mensagem enviada com sucesso!</div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-black py-16 border-t border-gray-900 text-center">
         <div class="container mx-auto px-6">
-            <img src="logo_branco.png" alt="Logotipo Rubiá Branco" width="250" style="height: auto;" class="h-16 md:h-20 mx-auto mb-8 object-contain">
-            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-2 leading-relaxed">
-                Edifício Clemente Faria - Bauru/SP
+            <img src="logo_branco.png" alt="Logotipo Rubiá Branco" width="150" style="height: auto;" class="mx-auto mb-8 object-contain">
+            
+            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="text-gray-500 text-sm uppercase block mb-2 leading-relaxed hover:text-red-500 transition">
+                R. Rio Branco, 7-19 - sala 905 - Bauru/SP
             </a>
-            <a href="tel:+5514988066737" class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-8">(14) 98806-6737</a>
+            <a href="tel:+5514988066737" class="text-gray-500 text-sm uppercase block mb-8 hover:text-red-500 transition">(14) 98806-6737</a>
             
             <div class="mx-auto rounded-lg overflow-hidden border border-gray-800 mb-8 shadow-2xl" style="max-width: 1000px; width: 100%;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.0224077439472!2d-49.07235547420197!3d-22.321851985306505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769383620862!5m2!1spt-BR!2sbr" title="Localização" width="1000" height="600" style="border:0; width: 100%; display: block;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.0224077439472!2d-49.07235547420197!3d-22.321851985306505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769383620862!5m2!1spt-BR!2sbr" title="Localização Advocacia Rubiá" width="1000" height="600" style="border:0; width: 100%; display: block;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <p class="text-gray-700 text-[10px] uppercase tracking-widest">Criado por <a href="https://resume.oscarmosca.com.br" class="text-red-900">Oscar Mosca</a></p>
+
+            <p class="text-gray-700 text-[10px] uppercase tracking-widest">Criado por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900">Oscar Mosca</a></p>
         </div>
     </footer>
 
@@ -231,7 +284,9 @@
     <script>
         // Simulador
         function liberarCaptura() {
-            if(!document.getElementById('calc-idade').value || !document.getElementById('calc-tempo').value) return alert("Preencha os campos.");
+            const idade = document.getElementById('calc-idade').value;
+            const tempo = document.getElementById('calc-tempo').value;
+            if(!idade || !tempo) return alert("Por favor, preencha os campos.");
             document.getElementById('passo-captura').classList.remove('hidden');
             document.getElementById('passo-captura').scrollIntoView({ behavior: 'smooth' });
         }
@@ -247,21 +302,30 @@
             let metaT = (g === 'M') ? 20 : 15;
             let est = Math.max(metaI - idade, metaT - tempo, 0);
             
-            document.getElementById('calc-texto-resultado').innerText = est === 0 ? `Olá ${nome}, você já pode atingir os critérios! Consulte-nos.` : `Olá ${nome}, faltam aprox. ${est} anos para sua aposentadoria.`;
+            document.getElementById('calc-texto-resultado').innerText = est === 0 ? `Olá ${nome}, você já pode atingir os critérios básicos de aposentadoria! Recomendamos uma consulta para validar o melhor valor.` : `Olá ${nome}, faltam aproximadamente ${est} anos para você atingir os critérios da regra geral.`;
+            
             document.getElementById('passo-captura').classList.add('hidden');
             document.getElementById('passo-resultado').classList.remove('hidden');
 
             const fd = new FormData();
-            fd.append('nome', nome); fd.append('whatsapp', document.getElementById('calc-tel').value);
-            fd.append('assunto', 'Lead Calculadora'); fd.append('mensagem', `Simulou: ${est} anos restantes.`);
+            fd.append('nome', nome); 
+            fd.append('whatsapp', document.getElementById('calc-tel').value);
+            fd.append('assunto', 'Lead Calculadora'); 
+            fd.append('mensagem', `Simulou: Faltam aprox. ${est} anos.`);
+            
             fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { method: 'POST', body: fd });
         });
 
         // Cookies
-        if (!localStorage.getItem('cookies-accepted')) document.getElementById('cookie-banner').classList.remove('hidden');
+        const cookieBanner = document.getElementById('cookie-banner');
+        if (!localStorage.getItem('cookies-accepted')) {
+            cookieBanner.classList.remove('hidden');
+        } else {
+            document.body.classList.add('cookies-accepted');
+        }
         document.getElementById('accept-cookies').addEventListener('click', () => {
             localStorage.setItem('cookies-accepted', 'true');
-            document.getElementById('cookie-banner').classList.add('hidden');
+            cookieBanner.classList.add('hidden');
             document.body.classList.add('cookies-accepted');
         });
 
@@ -280,6 +344,21 @@
         }
         load('https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&output=csv', 'planilha-blog');
         load('https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=1821350565&output=csv', 'planilha-faq', true);
+
+        // Formulário Principal
+        document.getElementById('mainContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnMainEnviar');
+            btn.innerText = "ENVIANDO..."; btn.disabled = true;
+            fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { method: 'POST', body: new FormData(this)})
+                .then(() => { this.reset(); btn.classList.add('hidden'); document.getElementById('mainMsgSucesso').classList.remove('hidden'); });
+        });
+
+        // Máscara WhatsApp
+        document.getElementById('whatsappMain').addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
     </script>
 </body>
 </html>
