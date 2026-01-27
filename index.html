@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Advocacia Rubiá | Advogado Previdenciário e Trabalhista em Bauru</title>
-    <meta name="description" content="Especialista em Aposentadorias, Revisão da Vida Toda e BPC/LOAS em Bauru. Mais de 1.800 clientes atendidos com excelência em Bauru e região.">
+    <meta name="description" content="Especialista em Aposentadorias, Revisão da Vida Toda e BPC/LOAS em Bauru. Mais de 1.800 clientes atendidos com excelência.">
     <meta name="keywords" content="Advogado Bauru, Aposentadoria Bauru, INSS Bauru, Revisão da Vida Toda, Advogado Trabalhista Bauru">
 
     <meta property="og:title" content="Advocacia Rubiá - Especialista em Bauru">
     <meta property="og:description" content="Consultoria especializada em Direito Previdenciário e Trabalhista.">
     <meta property="og:image" content="https://oscarmoscaoli.github.io/marciorubia/logo_branco.png">
-    <meta property="og:url" content="https://oscarmoscaoli.github.io/marciorubia/">
     <meta name="theme-color" content="#0a0f1d">
 
     <link rel="icon" type="image/png" href="favicon-96x96.png?v=2" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
     <link rel="shortcut icon" href="favicon.ico?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2" />
-    <meta name="apple-mobile-web-app-title" content="Adv. Rubia" />
     <link rel="manifest" href="site.webmanifest?v=2" />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -52,18 +50,21 @@
         details summary { list-style: none; outline: none; cursor: pointer; }
         details summary::-webkit-details-marker { display: none; }
         details[open] summary { color: #ef4444; }
+
+        /* Ajuste de altura do mapa para mobile */
+        @media (max-width: 768px) { iframe[height="600"] { height: 350px; } }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5514988066737?text=Olá,%20estou%20no%20seu%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida." class="btn-whatsapp-fixo" target="_blank">
+    <a href="https://wa.me/5514988066737?text=Olá,%20estou%20no%20seu%20site..." class="btn-whatsapp-fixo" target="_blank" aria-label="Contacto pelo WhatsApp">
         <span class="mr-2 uppercase tracking-wider">Falar no WhatsApp</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.405c0 6.556-5.332 11.888-11.888 11.888-2.01 0-3.988-.511-5.741-1.482l-6.243 1.706z"/></svg>
     </a>
 
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium uppercase tracking-wider">
-            <img src="logo_branco.png" alt="Márcio Rubia" class="h-16">
+            <img src="logo_branco.png" alt="Logotipo Advocacia Rubiá" width="200" height="64" class="h-16">
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
                 <a href="#equipe" class="hover:text-red-500 transition">Equipe</a>
@@ -83,26 +84,11 @@
         </div>
     </section>
 
-    <section id="servicos" class="py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 text-white uppercase text-center tracking-tighter">Áreas de Atuação</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
-                <div class="card-interativo bg-[#161e2d] p-8 rounded">
-                    <h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3>
-                    <p class="text-gray-400 text-sm">Especial, por idade, rural e tempo de contribuição.</p>
-                </div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded">
-                    <h3 class="text-white font-bold text-xl mb-4">Benefícios</h3>
-                    <p class="text-gray-400 text-sm">Auxílio-doença, auxílio-maternidade e BPC/LOAS.</p>
-                </div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded">
-                    <h3 class="text-white font-bold text-xl mb-4">Revisões</h3>
-                    <p class="text-gray-400 text-sm">Análise detalhada para garantir o valor máximo da sua renda.</p>
-                </div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded">
-                    <h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3>
-                    <p class="text-gray-400 text-sm">Defesa integral contra irregularidades e rescisões indevidas.</p>
-                </div>
+    <section id="blog" class="py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white uppercase mb-12 tracking-tighter">Informativo Jurídico</h2>
+            <div id="planilha-blog" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <p class="text-gray-500 text-center col-span-3">Carregando informativo...</p>
             </div>
         </div>
     </section>
@@ -111,35 +97,14 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Nossa Equipe</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-                <img src="Marcio.png" alt="Foto do Dr. Márcio Rubia, Advogado Titular" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover">
-                <h4 class="text-xl font-bold">Dr. Márcio Rubia</h4>
-                <p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p>
-            </div>
-            <div>
-                <img src="Carla.png" alt="Foto de Carla Rodrigues, Especialista da equipe Rubiá" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover">
-                <h4 class="text-xl font-bold">Carla Rodrigues</h4>
-                <p class="text-red-600 text-sm font-bold uppercase">Especialista</p>
-            </div>
-            <div>
-                <img src="Julia.png" alt="Foto de Julia Xavier, responsável pelo Atendimento" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover">
-                <h4 class="text-xl font-bold">Julia Xavier</h4>
-                <p class="text-red-600 text-sm font-bold uppercase">Atendimento</p>
-            </div>
+                <div><img src="Marcio.png" alt="Dr. Márcio Rubia" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Dr. Márcio Rubia</h4><p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p></div>
+                <div><img src="Carla.png" alt="Carla Rodrigues" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Carla Rodrigues</h4><p class="text-red-600 text-sm font-bold uppercase">Especialista</p></div>
+                <div><img src="Julia.png" alt="Julia Xavier" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Julia Xavier</h4><p class="text-red-600 text-sm font-bold uppercase">Atendimento</p></div>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white uppercase mb-12 text-center tracking-tighter">Informativo Jurídico</h2>
-            <div id="planilha-blog" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <p class="text-gray-500 text-center col-span-3">Carregando informativo...</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-24 bg-[#070b14]">
+    <section id="faq" class="py-24">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
             <div id="planilha-faq" class="space-y-4">
@@ -148,125 +113,84 @@
         </div>
     </section>
 
-    <section id="depoimentos" class="py-24">
+    <section id="depoimentos" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6 text-center">
             <span class="text-red-600 font-bold uppercase text-xs tracking-widest">Avaliações Reais</span>
             <h2 class="text-3xl font-bold text-white mt-4 mb-12 uppercase tracking-tighter">O que dizem nossos clientes</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-16">
                 <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full">
                     <p class="text-gray-400 mb-6 text-sm">"Excelente profissional, muito atencioso e resolveu meu problema com a aposentadoria de forma rápida."</p>
-                    <div>
-                        <div class="flex text-yellow-500 mb-2">★★★★★</div>
-                        <span class="text-white font-bold uppercase text-xs">A. Santos - Bauru/SP</span>
-                    </div>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">A. Santos - Bauru/SP</span></div>
                 </div>
                 <div class="bg-[#161e2d] p-8 rounded-xl border border-red-900/30 italic flex flex-col justify-between h-full shadow-2xl md:scale-105">
                     <p class="text-gray-400 mb-6 text-sm">"O Dr. Márcio explica tudo com muita clareza, o que nos dá muita segurança no processo."</p>
-                    <div>
-                        <div class="flex text-yellow-500 mb-2">★★★★★</div>
-                        <span class="text-white font-bold uppercase text-xs">Roberto Lima - Bauru/SP</span>
-                    </div>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">Roberto Lima - Bauru/SP</span></div>
                 </div>
                 <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full">
                     <p class="text-gray-400 mb-6 text-sm">"Consegui meu benefício do BPC graças ao esforço da equipe. Ótimo atendimento!"</p>
-                    <div>
-                        <div class="flex text-yellow-500 mb-2">★★★★★</div>
-                        <span class="text-white font-bold uppercase text-xs">Maria Oliveira - Bauru/SP</span>
-                    </div>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">Maria Oliveira - Bauru/SP</span></div>
                 </div>
             </div>
-
-            <a href="https://www.google.com/maps/place/Advocacia+Rubi%C3%A1/@-22.3217205,-49.0721167,17z/data=!4m8!3m7!1s0x94bf675c91eb8b19:0x7be56fcbe201054c!8m2!3d-22.3217205!4d-49.0721167!9m1!1b1!16s%2Fg%2F11kzy344ty?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-flex items-center gap-2 border border-red-900 text-white px-8 py-3 rounded hover:bg-red-900 transition font-bold uppercase text-xs tracking-widest">
+            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="inline-flex items-center gap-2 border border-red-900 text-white px-8 py-3 rounded hover:bg-red-900 transition font-bold uppercase text-xs tracking-widest">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Ver todas as avaliações no Google
             </a>
         </div>
     </section>
 
-    <section id="contato" class="py-24 bg-[#070b14]">
-        <div class="container mx-auto px-6 max-w-4xl">
+    <section id="contato" class="py-24">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
             <div class="bg-[#161e2d] p-10 rounded-xl border border-gray-800 shadow-2xl">
-                <h2 class="text-3xl font-bold text-white mb-6 uppercase text-center">Fale com um Especialista</h2>
+                <h2 class="text-3xl font-bold text-white mb-6 uppercase">Fale com um Especialista</h2>
                 <form id="mainContactForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <input type="hidden" name="origem" value="SITE_PRINCIPAL">
-                    <div class="space-y-4">
+                    <div class="space-y-4 text-left">
                         <input type="text" name="nome" placeholder="Seu Nome" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded outline-none focus:border-red-600 transition">
-                        <input type="tel" name="whatsapp" id="whatsappMain" placeholder="Seu WhatsApp" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded outline-none focus:border-red-600 transition">
-                        <input type="text" name="assunto" placeholder="Assunto (Ex: Aposentadoria)" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded outline-none focus:border-red-600 transition">
+                        <input type="tel" id="whatsappMain" name="whatsapp" placeholder="WhatsApp" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded outline-none focus:border-red-600 transition">
+                        <input type="text" name="assunto" placeholder="Assunto" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded outline-none focus:border-red-600 transition">
                     </div>
-                    <div class="space-y-4">
-                        <textarea name="mensagem" placeholder="Como podemos ajudar?" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded h-full min-h-[150px] outline-none focus:border-red-600 transition"></textarea>
+                    <div class="space-y-4 text-left flex flex-col">
+                        <textarea name="mensagem" placeholder="Como podemos ajudar?" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded flex-grow outline-none focus:border-red-600 transition min-h-[150px]"></textarea>
                     </div>
-                    <button type="submit" id="btnMainEnviar" class="md:col-span-2 bg-[#5e111a] text-white py-5 rounded font-bold uppercase tracking-widest hover:bg-red-900 transition shadow-lg">Enviar Mensagem</button>
+                    <button type="submit" id="btnMainEnviar" class="md:col-span-2 bg-[#5e111a] text-white py-5 rounded font-bold uppercase tracking-widest hover:bg-red-900 transition">Enviar Mensagem</button>
                 </form>
-                <div id="mainMsgSucesso" class="hidden bg-green-900/30 text-green-400 p-4 rounded text-center font-bold mt-4 border border-green-800">Mensagem gravada com sucesso!</div>
+                <div id="mainMsgSucesso" class="hidden bg-green-900/30 text-green-400 p-4 rounded font-bold mt-4 border border-green-800 text-sm">Mensagem enviada com sucesso!</div>
             </div>
         </div>
     </section>
 
     <footer class="bg-black py-16 border-t border-gray-900 text-center">
-    <div class="container mx-auto px-6">
-<img src="logo_branco.png" class="h-16 mx-auto mb-8">
-        
-        <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" 
-           target="_blank" 
-           class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-2 leading-relaxed">
-            Edifício Comercial Clemente Faria<br>
-            R. Rio Branco, 7-19 - sala 905 - Centro, Bauru - SP
-        </a>
+        <div class="container mx-auto px-6">
+            <img src="logo_branco.png" alt="Logotipo Rubiá Branco" width="200" height="64" class="h-16 mx-auto mb-8">
+            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-2 leading-relaxed">
+                Edifício Comercial Clemente Faria<br>
+                R. Rio Branco, 7-19 - sala 905 - Centro, Bauru - SP
+            </a>
+            <p class="text-gray-500 text-sm uppercase mb-8">(14) 98806-6737</p>
+            
+            <div class="mx-auto rounded-lg overflow-hidden border border-gray-800 mb-8 shadow-2xl" style="max-width: 1000px; width: 100%;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.0224077439472!2d-49.07235547420197!3d-22.321851985306505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769383620862!5m2!1spt-BR!2sbr" title="Localização Advocacia Rubiá" width="1000" height="600" style="border:0; width: 100%; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
-         <a href="tel:5514988066737" 
-           target="_blank" 
-           class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-2 leading-relaxed">
-             (14) 98806-6737
-        </a>
-        
-        <div class="mx-auto rounded-lg overflow-hidden border border-gray-800 mb-8 shadow-2xl" 
-             style="max-width: 1000px; width: 100%;">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.0224077439472!2d-49.07235547420197!3d-22.321851985306505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769383620862!5m2!1spt-BR!2sbr" 
-                width="1000" 
-                height="600" 
-                style="border:0; width: 100%; display: block;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                class="mapa-iframe">
-            </iframe>
+            <p class="text-gray-700 text-[10px] mt-8 uppercase tracking-widest">Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900">Oscar Mosca</a></p>
         </div>
+    </footer>
 
-        <p class="text-gray-700 text-[10px] mt-8 uppercase tracking-widest">
-            Criado com ❤️ por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900">Oscar Mosca</a>
-        </p>
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#161e2d] border-t border-gray-800 p-4 z-[2000] hidden">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-gray-400 text-sm text-center md:text-left">Utilizamos cookies para melhorar a sua experiência e analisar o tráfego do site de acordo com a LGPD.</p>
+            <button id="accept-cookies" class="bg-[#5e111a] text-white px-6 py-2 rounded font-bold uppercase text-xs hover:bg-red-900 transition tracking-widest">Aceitar</button>
+        </div>
     </div>
-</footer>
-
-<style>
-    /* Ajuste de altura para mobile para manter a usabilidade */
-    @media (max-width: 768px) {
-        iframe[height="600"] {
-            height: 350px;
-        }
-    }
-</style>
-<style>
-    /* Ajuste de altura para mobile para o mapa não ficar muito "esticado" verticalmente */
-    @media (max-width: 768px) {
-        iframe[height="500"] {
-            height: 300px;
-        }
-    }
-</style>
 
     <script>
+        // Carregamento Planilha
         async function loadFromSheet(url, targetId, isFAQ = false) {
             try {
                 const res = await fetch(url);
                 const data = await res.text();
                 const rows = data.split(/\r?\n/).filter(r => r.trim() !== "").slice(1);
                 const container = document.getElementById(targetId);
-                
                 container.innerHTML = rows.map(r => {
                     const c = r.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
                     if (c && c.length >= 2) {
@@ -277,7 +201,7 @@
                         } else if (c.length >= 3) {
                             const col3 = c[2].replace(/^"|"$/g, '').trim();
                             const col4 = (c[3]) ? c[3].replace(/^"|"$/g, '').trim() : null;
-                            let btn = col4 ? `<a href="${col4}" target="_blank" class="text-white text-xs font-bold uppercase border-b border-red-900 pb-1 mt-4 inline-block hover:text-red-500 transition">Ler artigo completo →</a>` : "";
+                            let btn = col4 ? `<a href="${col4}" target="_blank" class="text-white text-xs font-bold uppercase border-b border-red-900 pb-1 mt-4 inline-block hover:text-red-500 transition">Ler artigo →</a>` : "";
                             return `<article class="card-interativo bg-[#161e2d] p-6 rounded flex flex-col h-full"><span class="text-xs text-red-500 font-bold uppercase">${col2}</span><h4 class="text-xl font-bold text-white mt-2 mb-4 leading-tight">${col1}</h4><p class="text-gray-400 text-sm flex-grow">${col3}</p>${btn}</article>`;
                         }
                     } return '';
@@ -287,59 +211,29 @@
 
         const linkBlog = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&single=true&output=csv';
         const linkFAQ = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=1821350565&single=true&output=csv';
-
         loadFromSheet(linkBlog, 'planilha-blog');
         loadFromSheet(linkFAQ, 'planilha-faq', true);
 
-        // Script Formulário
+        // Formulário
         const mainForm = document.getElementById('mainContactForm');
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec';
-
         mainForm.addEventListener('submit', e => {
             e.preventDefault();
             const btn = document.getElementById('btnMainEnviar');
             btn.innerText = "ENVIANDO..."; btn.disabled = true;
-            fetch(scriptURL, { method: 'POST', body: new FormData(mainForm)})
-                .then(() => {
-                    mainForm.reset(); btn.classList.add('hidden');
-                    document.getElementById('mainMsgSucesso').classList.remove('hidden');
-                });
+            fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { method: 'POST', body: new FormData(mainForm)})
+                .then(() => { mainForm.reset(); btn.classList.add('hidden'); document.getElementById('mainMsgSucesso').classList.remove('hidden'); });
         });
+
+        // Cookies
+        const cookieBanner = document.getElementById('cookie-banner');
+        if (!localStorage.getItem('cookies-accepted')) cookieBanner.classList.remove('hidden');
+        document.getElementById('accept-cookies').addEventListener('click', () => { localStorage.setItem('cookies-accepted', 'true'); cookieBanner.classList.add('hidden'); });
 
         // Máscara WhatsApp
         document.getElementById('whatsappMain').addEventListener('input', function (e) {
             let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
             e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
         });
-
-        // Controlo do Banner de Cookies
-const cookieBanner = document.getElementById('cookie-banner');
-const acceptBtn = document.getElementById('accept-cookies');
-
-// Verifica se o utilizador já aceitou os cookies anteriormente
-if (!localStorage.getItem('cookies-accepted')) {
-    cookieBanner.classList.remove('hidden');
-}
-
-// Guarda a preferência e esconde o banner ao clicar
-acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookies-accepted', 'true');
-    cookieBanner.classList.add('hidden');
-});
     </script>
-
-    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#161e2d] border-t border-gray-800 p-4 z-[2000] hidden">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-gray-400 text-sm text-center md:text-left">
-            Utilizamos cookies para melhorar a sua experiência e analisar o tráfego do site de acordo com a LGPD. 
-            Ao continuar a navegar, concorda com a nossa utilização de cookies.
-        </p>
-        <div class="flex gap-4">
-            <button id="accept-cookies" class="bg-[#5e111a] text-white px-6 py-2 rounded font-bold uppercase text-xs hover:bg-red-900 transition tracking-widest">
-                Aceitar
-            </button>
-        </div>
-    </div>
-</div>
 </body>
 </html>
