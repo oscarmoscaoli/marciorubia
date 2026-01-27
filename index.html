@@ -6,8 +6,16 @@
     
     <title>Advocacia Rubiá | Advogado Previdenciário e Trabalhista em Bauru</title>
     <meta name="description" content="Especialista em Aposentadorias, Revisão da Vida Toda e BPC/LOAS em Bauru. Mais de 1.800 clientes atendidos com excelência.">
+    <meta name="keywords" content="Advogado Bauru, Aposentadoria Bauru, INSS Bauru, Revisão da Vida Toda, Advogado Trabalhista Bauru">
+
+    <meta property="og:title" content="Advocacia Rubiá - Especialista em Bauru">
+    <meta property="og:description" content="Consultoria especializada em Direito Previdenciário e Trabalhista.">
+    <meta property="og:image" content="https://oscarmoscaoli.github.io/marciorubia/logo_branco.png">
+    <meta name="theme-color" content="#0a0f1d">
 
     <link rel="icon" type="image/png" href="favicon-96x96.png?v=2" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2" />
+    <link rel="shortcut icon" href="favicon.ico?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2" />
     <link rel="manifest" href="site.webmanifest?v=2" />
 
@@ -25,6 +33,8 @@
             text-decoration: none; font-weight: bold; font-size: 14px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        .btn-whatsapp-fixo:hover { transform: scale(1.05); background-color: #20ba5a; }
+
         body:not(.cookies-accepted) .btn-whatsapp-fixo { bottom: 120px; }
 
         .card-interativo {
@@ -33,33 +43,30 @@
         }
         .card-interativo:hover {
             transform: translateY(-10px); background-color: #1c2639; border-bottom: 4px solid var(--bordo);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
         }
 
         .foto-equipe { transition: all 0.5s ease; filter: grayscale(100%); border: 2px solid #1f2937; }
         .foto-equipe:hover { filter: grayscale(0%); transform: scale(1.05); border-color: var(--bordo); }
 
-        /* Estilo UI Calculadora */
-        .input-calc {
-            width: 100%; background-color: #0a0f1d; border: 1px solid #1f2937; 
-            padding: 1rem; border-radius: 0.5rem; color: white; outline: none;
-            transition: border-color 0.3s;
-        }
-        .input-calc:focus { border-color: #5e111a; }
-        
+        details summary { list-style: none; outline: none; cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary { color: #ef4444; }
+
         @media (max-width: 768px) { iframe[height="600"] { height: 350px; } }
     </style>
 </head>
 <body class="antialiased">
 
-    <a href="https://wa.me/5514988066737" class="btn-whatsapp-fixo" target="_blank">
+    <a href="https://wa.me/5514988066737?text=Olá,%20estou%20no%20seu%20site..." class="btn-whatsapp-fixo" target="_blank" aria-label="Contacto pelo WhatsApp">
         <span class="mr-2 uppercase tracking-wider">Falar no WhatsApp</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.405c0 6.556-5.332 11.888-11.888 11.888-2.01 0-3.988-.511-5.741-1.482l-6.243 1.706z"/></svg>
     </a>
 
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="logo_branco.png" alt="Logotipo Advocacia Rubiá" width="150" style="height: auto;" class="object-contain">
-            <div class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium uppercase tracking-wider">
+            <img src="logo_branco.png" alt="Logotipo Advocacia Rubiá" width="250" style="height: auto;" class="h-16 md:h-20 object-contain">
+            <div class="hidden md:flex space-x-8 items-center">
                 <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
                 <a href="#blog" class="hover:text-red-500 transition">Informativo</a>
                 <a href="#calculadora" class="hover:text-red-500 transition">Simulador</a>
@@ -68,9 +75,18 @@
         </div>
     </nav>
 
+    <section class="py-24 text-center border-b border-gray-900">
+        <div class="container mx-auto px-6">
+            <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">Especialista Previdenciário em Bauru</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white uppercase leading-tight">Defesa dos seus Direitos contra o INSS</h1>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Mais de 1.800 atendimentos realizados com foco em Aposentadorias e Revisões.</p>
+            <a href="#contato" class="bg-[#5e111a] text-white px-10 py-4 rounded font-bold text-lg hover:bg-red-900 transition uppercase tracking-widest">Agendar Consulta</a>
+        </div>
+    </section>
+
     <section id="servicos" class="py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-white uppercase text-center tracking-tighter">Áreas de Atuação</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
                 <div class="card-interativo bg-[#161e2d] p-8 rounded">
                     <h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3>
@@ -104,65 +120,99 @@
     <section id="calculadora" class="py-24 border-t border-gray-900">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="bg-[#161e2d] p-10 rounded-xl border border-gray-800 shadow-2xl">
-                <h2 class="text-3xl font-bold text-white mb-2 uppercase text-center tracking-tighter">Simulador de Aposentadoria</h2>
-                <p class="text-gray-400 text-center mb-10 text-xs uppercase tracking-widest">Estimativa baseada na regra geral</p>
+                <h2 class="text-3xl font-bold text-white mb-4 uppercase text-center tracking-tighter">Simulador de Aposentadoria</h2>
+                <p class="text-gray-400 text-center mb-10 text-sm uppercase tracking-widest">Descubra quanto tempo falta para o seu benefício</p>
 
                 <div id="simulador-container">
-                    <div id="passo-calculo" class="grid md:grid-cols-2 gap-8">
-                        <div class="space-y-6">
-                            <div>
-                                <label class="text-white text-xs font-bold uppercase mb-2 block">Gênero</label>
-                                <select id="calc-genero" class="input-calc">
-                                    <option value="M">Masculino</option>
-                                    <option value="F">Feminino</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="text-white text-xs font-bold uppercase mb-2 block">Idade Atual</label>
-                                <input type="number" id="calc-idade" placeholder="Ex: 45" class="input-calc">
-                            </div>
+                    <div id="passo-calculo" class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4 text-left">
+                            <label class="text-white text-xs font-bold uppercase">Gênero</label>
+                            <select id="calc-genero" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none focus:border-red-600">
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                            </select>
+                            <label class="text-white text-xs font-bold uppercase">Idade Atual</label>
+                            <input type="number" id="calc-idade" placeholder="Ex: 45" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
                         </div>
-                        <div class="space-y-6 flex flex-col justify-between">
-                            <div>
-                                <label class="text-white text-xs font-bold uppercase mb-2 block">Tempo de Contribuição (Anos)</label>
-                                <input type="number" id="calc-tempo" placeholder="Ex: 20" class="input-calc">
-                            </div>
-                            <button onclick="liberarCaptura()" class="w-full bg-[#5e111a]/20 border border-[#5e111a] text-white font-bold py-4 rounded uppercase tracking-widest hover:bg-[#5e111a] transition-all">Ver Resultado Grátis</button>
+                        <div class="space-y-4 text-left flex flex-col">
+                            <label class="text-white text-xs font-bold uppercase">Tempo de Contribuição (Anos)</label>
+                            <input type="number" id="calc-tempo" placeholder="Ex: 20" class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none mb-4">
+                            <button onclick="liberarCaptura()" class="w-full bg-red-900/20 border border-red-900 text-white font-bold py-4 uppercase tracking-widest hover:bg-red-900 transition">Ver Resultado</button>
                         </div>
                     </div>
 
-                    <div id="passo-captura" class="hidden mt-10 pt-10 border-t border-gray-800">
-                        <h3 class="text-white font-bold mb-8 uppercase text-center text-sm tracking-widest">Informe os dados para liberar o cálculo</h3>
+                    <div id="passo-captura" class="hidden mt-8 pt-8 border-t border-gray-800">
+                        <h3 class="text-white font-bold mb-6 uppercase text-center text-sm">Preencha para liberar o resultado gratuito</h3>
                         <form id="calc-lead-form" class="grid grid-cols-1 gap-4 max-w-md mx-auto">
-                            <input type="text" id="calc-nome" placeholder="Nome Completo" required class="input-calc">
-                            <input type="tel" id="calc-tel" placeholder="WhatsApp" required class="input-calc">
-                            <input type="email" id="calc-email" placeholder="E-mail" required class="input-calc">
-                            <label class="flex items-start gap-3 text-gray-400 text-xs cursor-pointer p-2">
+                            <input type="text" id="calc-nome" placeholder="Seu Nome Completo" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
+                            <input type="tel" id="calc-tel" placeholder="Seu WhatsApp" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
+                            <input type="email" id="calc-email" placeholder="Seu melhor E-mail" required class="w-full bg-[#0a0f1d] border border-gray-800 p-4 rounded text-white outline-none">
+                            <label class="flex items-start gap-3 text-gray-400 text-xs cursor-pointer text-left">
                                 <input type="checkbox" required class="mt-1 accent-red-600">
-                                <span>Aceito receber informativos e novidades jurídicas de acordo com a LGPD.</span>
+                                <span>Aceito receber informativos jurídicos de acordo com a LGPD.</span>
                             </label>
-                            <button type="submit" class="bg-[#5e111a] text-white py-4 rounded font-bold uppercase tracking-widest hover:bg-red-900 shadow-lg transition-all">Calcular Agora</button>
+                            <button type="submit" class="bg-[#5e111a] text-white py-4 rounded font-bold uppercase tracking-widest hover:bg-red-900 transition">Calcular Agora</button>
                         </form>
                     </div>
 
-                    <div id="passo-resultado" class="hidden mt-10 p-8 bg-red-900/10 border border-red-900/40 rounded-lg text-center">
-                        <h4 class="text-white font-bold text-xl mb-3">Resultado Estimado</h4>
+                    <div id="passo-resultado" class="hidden mt-8 p-6 bg-red-900/10 border border-red-900 rounded text-center">
+                        <h4 class="text-white font-bold text-xl mb-2">Resultado Estimado</h4>
                         <p id="calc-texto-resultado" class="text-gray-300 leading-relaxed"></p>
-                        <a href="https://wa.me/5514988066737" class="mt-6 inline-block text-red-500 font-bold uppercase text-xs border-b border-red-500 pb-1 hover:text-red-400 transition">Validar cálculo no WhatsApp →</a>
+                        <a href="https://wa.me/5514988066737" class="inline-block mt-6 text-red-500 font-bold uppercase text-xs border-b border-red-500 pb-1">Validar cálculo com especialista →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="equipe" class="py-24 bg-[#070b14]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Nossa Equipe</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div><img src="Marcio.png" alt="Dr. Márcio Rubia" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Dr. Márcio Rubia</h4><p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p></div>
+                <div><img src="Carla.png" alt="Carla Rodrigues" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Carla Rodrigues</h4><p class="text-red-600 text-sm font-bold uppercase">Especialista</p></div>
+                <div><img src="Julia.png" alt="Julia Xavier" width="192" height="192" loading="lazy" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Julia Xavier</h4><p class="text-red-600 text-sm font-bold uppercase">Atendimento</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
+            <div id="planilha-faq" class="space-y-4">
+                <p class="text-center text-gray-500">Carregando perguntas...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 bg-[#070b14]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12 uppercase tracking-tighter">O que dizem nossos clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-16">
+                <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full">
+                    <p class="text-gray-400 mb-6 text-sm">"Excelente profissional, muito atencioso e resolveu meu problema com a aposentadoria rapidamente."</p>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">A. Santos - Bauru/SP</span></div>
+                </div>
+                <div class="bg-[#161e2d] p-8 rounded-xl border border-red-900/30 italic flex flex-col justify-between h-full shadow-2xl md:scale-105">
+                    <p class="text-gray-400 mb-6 text-sm">"O Dr. Márcio explica tudo com clareza, o que nos dá muita segurança."</p>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">Roberto Lima - Bauru/SP</span></div>
+                </div>
+                <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full">
+                    <p class="text-gray-400 mb-6 text-sm">"Consegui meu benefício do BPC graças ao esforço da equipe."</p>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">Maria Oliveira - Bauru/SP</span></div>
+                </div>
+            </div>
+            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="inline-flex items-center gap-2 border border-red-900 text-white px-8 py-3 rounded hover:bg-red-900 transition font-bold uppercase text-xs tracking-widest">Ver no Google Maps</a>
+        </div>
+    </section>
+
     <footer class="bg-black py-16 border-t border-gray-900 text-center">
         <div class="container mx-auto px-6">
-            <img src="logo_branco.png" alt="Logotipo Rubiá Branco" width="150" style="height: auto;" class="mx-auto mb-8 object-contain">
-            
-            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="text-gray-500 text-sm uppercase block mb-2 leading-relaxed hover:text-red-500 transition">
-                R. Rio Branco, 7-19 - sala 905 - Bauru/SP
+            <img src="logo_branco.png" alt="Logotipo Rubiá Branco" width="250" style="height: auto;" class="h-16 md:h-20 mx-auto mb-8 object-contain">
+            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-2 leading-relaxed">
+                Edifício Clemente Faria - Bauru/SP
             </a>
-            <a href="tel:+5514988066737" class="text-gray-500 text-sm uppercase block mb-8 hover:text-red-500 transition">(14) 98806-6737</a>
+            <a href="tel:+5514988066737" class="text-gray-500 text-sm uppercase hover:text-red-500 transition block mb-8">(14) 98806-6737</a>
             
             <div class="mx-auto rounded-lg overflow-hidden border border-gray-800 mb-8 shadow-2xl" style="max-width: 1000px; width: 100%;">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.0224077439472!2d-49.07235547420197!3d-22.321851985306505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769383620862!5m2!1spt-BR!2sbr" title="Localização" width="1000" height="600" style="border:0; width: 100%; display: block;" allowfullscreen="" loading="lazy"></iframe>
@@ -181,9 +231,7 @@
     <script>
         // Simulador
         function liberarCaptura() {
-            const idade = document.getElementById('calc-idade').value;
-            const tempo = document.getElementById('calc-tempo').value;
-            if(!idade || !tempo) return alert("Por favor, preencha os campos de idade e tempo.");
+            if(!document.getElementById('calc-idade').value || !document.getElementById('calc-tempo').value) return alert("Preencha os campos.");
             document.getElementById('passo-captura').classList.remove('hidden');
             document.getElementById('passo-captura').scrollIntoView({ behavior: 'smooth' });
         }
@@ -199,18 +247,13 @@
             let metaT = (g === 'M') ? 20 : 15;
             let est = Math.max(metaI - idade, metaT - tempo, 0);
             
-            document.getElementById('calc-texto-resultado').innerText = est === 0 ? `Olá ${nome}, você já pode atingir os critérios básicos de aposentadoria! Recomendamos uma consulta para validar o melhor valor.` : `Olá ${nome}, faltam aproximadamente ${est} anos para você atingir os critérios da regra geral.`;
-            
+            document.getElementById('calc-texto-resultado').innerText = est === 0 ? `Olá ${nome}, você já pode atingir os critérios! Consulte-nos.` : `Olá ${nome}, faltam aprox. ${est} anos para sua aposentadoria.`;
             document.getElementById('passo-captura').classList.add('hidden');
             document.getElementById('passo-resultado').classList.remove('hidden');
 
-            // Envio para Sheets
             const fd = new FormData();
-            fd.append('nome', nome); 
-            fd.append('whatsapp', document.getElementById('calc-tel').value);
-            fd.append('assunto', 'Lead Calculadora'); 
-            fd.append('mensagem', `Simulou: Faltam aprox. ${est} anos. Gênero: ${g}, Idade: ${idade}, Tempo: ${tempo}.`);
-            
+            fd.append('nome', nome); fd.append('whatsapp', document.getElementById('calc-tel').value);
+            fd.append('assunto', 'Lead Calculadora'); fd.append('mensagem', `Simulou: ${est} anos restantes.`);
             fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { method: 'POST', body: fd });
         });
 
@@ -236,6 +279,7 @@
             }).join('');
         }
         load('https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&output=csv', 'planilha-blog');
+        load('https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=1821350565&output=csv', 'planilha-faq', true);
     </script>
 </body>
 </html>
