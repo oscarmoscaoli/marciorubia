@@ -311,6 +311,35 @@
             let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
             e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
         });
+
+        // Controlo do Banner de Cookies
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptBtn = document.getElementById('accept-cookies');
+
+// Verifica se o utilizador já aceitou os cookies anteriormente
+if (!localStorage.getItem('cookies-accepted')) {
+    cookieBanner.classList.remove('hidden');
+}
+
+// Guarda a preferência e esconde o banner ao clicar
+acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookies-accepted', 'true');
+    cookieBanner.classList.add('hidden');
+});
     </script>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#161e2d] border-t border-gray-800 p-4 z-[2000] hidden">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-400 text-sm text-center md:text-left">
+            Utilizamos cookies para melhorar a sua experiência e analisar o tráfego do site de acordo com a LGPD. 
+            Ao continuar a navegar, concorda com a nossa utilização de cookies.
+        </p>
+        <div class="flex gap-4">
+            <button id="accept-cookies" class="bg-[#5e111a] text-white px-6 py-2 rounded font-bold uppercase text-xs hover:bg-red-900 transition tracking-widest">
+                Aceitar
+            </button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
