@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Advocacia Rubiá | Advogado Previdenciário e Trabalhista em Bauru</title>
-    <meta name="description" content="Especialista em Aposentadorias, Revisão da Vida Toda e BPC/LOAS em Bauru.">
+    <meta name="description" content="Especialista em Aposentadorias, Revisão da Vida Toda e BPC/LOAS em Bauru. Mais de 1.800 clientes atendidos com excelência.">
 
     <link rel="icon" type="image/png" href="favicon-96x96.png?v=2" sizes="96x96" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2" />
@@ -23,41 +23,42 @@
             background-color: #25d366; color: white; border-radius: 50px;
             padding: 12px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             text-decoration: none; font-weight: bold; font-size: 14px;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         body:not(.cookies-accepted) .btn-whatsapp-fixo { bottom: 120px; }
 
-        .card-interativo { transition: all 0.3s ease; border-bottom: 4px solid transparent; }
-        .card-interativo:hover { transform: translateY(-5px); background-color: #1c2639; border-bottom-color: var(--bordo); }
+        .card-interativo {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom: 4px solid transparent;
+        }
+        .card-interativo:hover {
+            transform: translateY(-10px); background-color: #1c2639; border-bottom: 4px solid var(--bordo);
+        }
 
-        .foto-equipe { transition: all 0.3s ease; filter: grayscale(100%); border: 2px solid #1f2937; }
+        .foto-equipe { transition: all 0.5s ease; filter: grayscale(100%); border: 2px solid #1f2937; }
         .foto-equipe:hover { filter: grayscale(0%); transform: scale(1.05); border-color: var(--bordo); }
 
+        /* UI Calculadora */
         .input-calc {
             width: 100%; background-color: #0a0f1d; border: 1px solid #1f2937; 
             padding: 1rem; border-radius: 0.5rem; color: white; outline: none;
             transition: border-color 0.3s;
         }
         .input-calc:focus { border-color: #5e111a; }
-
-        details summary { list-style: none; outline: none; cursor: pointer; }
-        details summary::-webkit-details-marker { display: none; }
-
+        
         @media (max-width: 768px) { iframe[height="600"] { height: 350px; } }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- WhatsApp Fixo -->
     <a href="https://wa.me/5514988066737" class="btn-whatsapp-fixo" target="_blank">
         <span class="mr-2 uppercase tracking-wider">Falar no WhatsApp</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.405c0 6.556-5.332 11.888-11.888 11.888-2.01 0-3.988-.511-5.741-1.482l-6.243 1.706z"/></svg>
     </a>
 
-    <!-- Navegação -->
     <nav class="bg-[#070b14] border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="logo_branco.png" alt="Advocacia Rubiá" width="150" style="height: auto;" class="object-contain">
+            <img src="logo_branco.png" alt="Logotipo Advocacia Rubiá" width="150" style="height: auto;" class="object-contain">
             <div class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider">
                 <a href="#servicos" class="hover:text-red-500 transition">Serviços</a>
                 <a href="#blog" class="hover:text-red-500 transition">Informativo</a>
@@ -67,7 +68,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="py-24 text-center border-b border-gray-900">
         <div class="container mx-auto px-6">
             <p class="text-red-600 font-bold tracking-widest uppercase text-xs mb-4">Especialista Previdenciário em Bauru</p>
@@ -77,20 +77,30 @@
         </div>
     </section>
 
-    <!-- Serviços -->
     <section id="servicos" class="py-24">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
+            <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Áreas de Atuação</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3><p class="text-gray-400 text-sm">Especial, por idade, rural e tempo de contribuição.</p></div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Benefícios</h3><p class="text-gray-400 text-sm">Auxílio-doença, auxílio-maternidade e BPC/LOAS.</p></div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Revisões</h3><p class="text-gray-400 text-sm">Análise detalhada para garantir o valor máximo.</p></div>
-                <div class="card-interativo bg-[#161e2d] p-8 rounded"><h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3><p class="text-gray-400 text-sm">Defesa contra irregularidades e rescisões indevidas.</p></div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Aposentadoria</h3>
+                    <p class="text-gray-400 text-sm">Especial, por idade, rural e tempo de contribuição.</p>
+                </div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Benefícios</h3>
+                    <p class="text-gray-400 text-sm">Auxílio-doença, auxílio-maternidade e BPC/LOAS.</p>
+                </div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Revisões</h3>
+                    <p class="text-gray-400 text-sm">Análise detalhada para garantir o valor máximo da sua renda.</p>
+                </div>
+                <div class="card-interativo bg-[#161e2d] p-8 rounded">
+                    <h3 class="text-white font-bold text-xl mb-4">Trabalhista</h3>
+                    <p class="text-gray-400 text-sm">Defesa integral contra irregularidades e rescisões indevidas.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Informativo -->
     <section id="blog" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-white uppercase mb-12 tracking-tighter">Informativo Jurídico</h2>
@@ -100,57 +110,71 @@
         </div>
     </section>
 
-    <!-- Calculadora -->
     <section id="calculadora" class="py-24 border-t border-gray-900">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="bg-[#161e2d] p-10 rounded-xl border border-gray-800 shadow-2xl">
                 <h2 class="text-3xl font-bold text-white mb-2 uppercase text-center tracking-tighter">Simulador de Aposentadoria</h2>
                 <p class="text-gray-400 text-center mb-10 text-xs uppercase tracking-widest">Estimativa baseada na regra geral</p>
+
                 <div id="simulador-container">
                     <div id="passo-calculo" class="grid md:grid-cols-2 gap-8">
                         <div class="space-y-6">
-                            <div><label class="text-white text-xs font-bold uppercase mb-2 block">Gênero</label><select id="calc-genero" class="input-calc"><option value="M">Masculino</option><option value="F">Feminino</option></select></div>
-                            <div><label class="text-white text-xs font-bold uppercase mb-2 block">Idade Atual</label><input type="number" id="calc-idade" placeholder="Ex: 45" class="input-calc"></div>
+                            <div>
+                                <label class="text-white text-xs font-bold uppercase mb-2 block">Gênero</label>
+                                <select id="calc-genero" class="input-calc">
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Feminino</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-white text-xs font-bold uppercase mb-2 block">Idade Atual</label>
+                                <input type="number" id="calc-idade" placeholder="Ex: 45" class="input-calc">
+                            </div>
                         </div>
                         <div class="space-y-6 flex flex-col justify-between">
-                            <div><label class="text-white text-xs font-bold uppercase mb-2 block">Tempo de Contribuição (Anos)</label><input type="number" id="calc-tempo" placeholder="Ex: 20" class="input-calc"></div>
+                            <div>
+                                <label class="text-white text-xs font-bold uppercase mb-2 block">Tempo de Contribuição (Anos)</label>
+                                <input type="number" id="calc-tempo" placeholder="Ex: 20" class="input-calc">
+                            </div>
                             <button onclick="liberarCaptura()" class="w-full bg-[#5e111a]/20 border border-[#5e111a] text-white font-bold py-4 rounded uppercase tracking-widest hover:bg-[#5e111a] transition-all">Ver Resultado Grátis</button>
                         </div>
                     </div>
+
                     <div id="passo-captura" class="hidden mt-10 pt-10 border-t border-gray-800">
                         <h3 class="text-white font-bold mb-8 uppercase text-center text-sm tracking-widest">Informe os dados para liberar o cálculo</h3>
                         <form id="calc-lead-form" class="grid grid-cols-1 gap-4 max-w-md mx-auto">
                             <input type="text" id="calc-nome" placeholder="Nome Completo" required class="input-calc">
                             <input type="tel" id="calc-tel" placeholder="WhatsApp" required class="input-calc">
                             <input type="email" id="calc-email" placeholder="E-mail" required class="input-calc">
-                            <label class="flex items-start gap-3 text-gray-400 text-xs cursor-pointer p-2"><input type="checkbox" required class="mt-1 accent-red-600"><span>Aceito receber informativos de acordo com a LGPD.</span></label>
-                            <button type="submit" class="bg-[#5e111a] text-white py-4 rounded font-bold uppercase tracking-widest hover:bg-red-900 transition-all">Calcular Agora</button>
+                            <label class="flex items-start gap-3 text-gray-400 text-xs cursor-pointer p-2">
+                                <input type="checkbox" required class="mt-1 accent-red-600">
+                                <span>Aceito receber informativos e novidades jurídicas.</span>
+                            </label>
+                            <button type="submit" class="bg-[#5e111a] text-white py-4 rounded font-bold uppercase tracking-widest hover:bg-red-900 shadow-lg transition-all">Calcular Agora</button>
                         </form>
                     </div>
+
                     <div id="passo-resultado" class="hidden mt-10 p-8 bg-red-900/10 border border-red-900/40 rounded-lg text-center">
                         <h4 class="text-white font-bold text-xl mb-3">Resultado Estimado</h4>
                         <p id="calc-texto-resultado" class="text-gray-300 leading-relaxed"></p>
-                        <a href="https://wa.me/5514988066737" class="mt-6 inline-block text-red-500 font-bold uppercase text-xs border-b border-red-500 pb-1">Validar no WhatsApp →</a>
+                        <a href="https://wa.me/5514988066737" class="mt-6 inline-block text-red-500 font-bold uppercase text-xs border-b border-red-500 pb-1 hover:text-red-400 transition">Validar no WhatsApp →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Equipe (Adicionado Matheus e ajustado para 4 colunas) -->
     <section id="equipe" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-16 text-white uppercase tracking-tighter">Nossa Equipe</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
-                <div><img src="Marcio.png" alt="Dr. Márcio Rubia" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Dr. Márcio</h4><p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p></div>
-                <div><img src="Carla.png" alt="Carla Rodrigues" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Carla</h4><p class="text-red-600 text-sm font-bold uppercase">Especialista</p></div>
-                <div><img src="Matheus.png" alt="Dr. Matheus" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover bg-gray-800"><h4 class="text-xl font-bold">Dr. Matheus</h4><p class="text-red-600 text-sm font-bold uppercase">Advogado</p></div>
-                <div><img src="Julia.png" alt="Julia Xavier" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Julia</h4><p class="text-red-600 text-sm font-bold uppercase">Atendimento</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div><img src="Marcio.png" alt="Dr. Márcio Rubia" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Dr. Márcio Rubia</h4><p class="text-red-600 text-sm font-bold uppercase">Advogado Titular</p></div>
+                <div><img src="Carla.png" alt="Carla Rodrigues" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Carla Rodrigues</h4><p class="text-red-600 text-sm font-bold uppercase">Especialista</p></div>
+                <div><img src="Julia.png" alt="Julia Xavier" class="foto-equipe w-48 h-48 mx-auto rounded-full mb-6 object-cover"><h4 class="text-xl font-bold">Julia Xavier</h4><p class="text-red-600 text-sm font-bold uppercase">Atendimento</p></div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="py-24">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl font-bold mb-12 text-center text-white uppercase tracking-tighter">Dúvidas Frequentes</h2>
@@ -160,19 +184,27 @@
         </div>
     </section>
 
-    <!-- Depoimentos Dinâmicos Google Meu Negócio -->
     <section id="depoimentos" class="py-24 bg-[#070b14]">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-white mb-12 uppercase tracking-tighter">O que dizem nossos clientes</h2>
-            <!-- Container onde as avaliações reais vão aparecer -->
-            <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-5 gap-8 text-left mb-16">
-                <p class="text-center text-gray-500 col-span-5">A carregar avaliações do Google...</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-16">
+                <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full">
+                    <p class="text-gray-400 mb-6 text-sm">"Excelente profissional, muito atencioso e resolveu meu problema rapidamente."</p>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">A. Santos - Bauru/SP</span></div>
+                </div>
+                <div class="bg-[#161e2d] p-8 rounded-xl border border-red-900/30 italic flex flex-col justify-between h-full shadow-2xl md:scale-105">
+                    <p class="text-gray-400 mb-6 text-sm">"O Dr. Márcio explica tudo com clareza, o que nos dá muita segurança."</p>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">Roberto Lima - Bauru/SP</span></div>
+                </div>
+                <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full">
+                    <p class="text-gray-400 mb-6 text-sm">"Consegui meu benefício do BPC graças ao esforço da equipe."</p>
+                    <div><div class="flex text-yellow-500 mb-2">★★★★★</div><span class="text-white font-bold uppercase text-xs">Maria Oliveira - Bauru/SP</span></div>
+                </div>
             </div>
-            <a href="https://www.google.com/maps/search/Advocacia+Rubi%C3%A1/@-22.3276664,-49.0740954,17z" target="_blank" class="inline-flex items-center gap-2 border border-red-900 text-white px-8 py-3 rounded hover:bg-red-900 transition font-bold uppercase text-xs tracking-widest">Ver todas no Google Maps</a>
+            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="inline-flex items-center gap-2 border border-red-900 text-white px-8 py-3 rounded hover:bg-red-900 transition font-bold uppercase text-xs tracking-widest">Ver no Google Maps</a>
         </div>
     </section>
 
-    <!-- Formulário de Contato -->
     <section id="contato" class="py-24">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <div class="bg-[#161e2d] p-10 rounded-xl border border-gray-800 shadow-2xl">
@@ -194,27 +226,32 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
     <footer class="bg-black py-16 border-t border-gray-900 text-center">
         <div class="container mx-auto px-6">
             <img src="logo_branco.png" alt="Logotipo Rubiá Branco" width="150" style="height: auto;" class="mx-auto mb-8 object-contain">
-            <a href="https://www.google.com/maps/search/Advocacia+Rubi%C3%A1/@-22.3276664,-49.0740954,17z" target="_blank" class="text-gray-500 text-sm uppercase block mb-2 hover:text-red-500 transition leading-relaxed">R. Rio Branco, 7-19 - sala 905 - Bauru/SP</a>
+            
+            <a href="https://maps.app.goo.gl/eATtJi7ifqrTuDXLA" target="_blank" class="text-gray-500 text-sm uppercase block mb-2 hover:text-red-500 transition leading-relaxed">
+                R. Rio Branco, 7-19 - sala 905 - Bauru/SP
+            </a>
             <a href="tel:+5514988066737" class="text-gray-500 text-sm uppercase block mb-6 hover:text-red-500 transition">(14) 98806-6737</a>
             
-            <div class="flex justify-center space-x-6 mb-10">
-                <a href="https://www.instagram.com/advocaciarubia/" target="_blank" class="text-gray-500 hover:text-red-600 transition" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                <a href="https://www.facebook.com/marciorubiaadvogado" target="_blank" class="text-gray-500 hover:text-blue-600 transition" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+<div class="flex justify-center space-x-6 mb-10">
+                <a href="https://www.instagram.com/advocaciarubia/" target="_blank" class="text-gray-500 hover:text-red-600 transition" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/marciorubiaadvogado" target="_blank" class="text-gray-500 hover:text-blue-600 transition" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
             </div>
 
             <div class="mx-auto rounded-lg overflow-hidden border border-gray-800 mb-8 shadow-2xl" style="max-width: 1000px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.0224077439472!2d-49.07235547420197!3d-22.321851985306505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769383620862!5m2!1spt-BR!2sbr" title="Localização Advocacia Rubiá" width="1000" height="600" style="border:0; width: 100%; display: block;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d838.0224077439472!2d-49.07235547420197!3d-22.321851985306505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf675c91eb8b19%3A0x7be56fcbe201054c!2sAdvocacia%20Rubi%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1769383620862!5m2!1spt-BR!2sbr" title="Localização Advocacia Rubiá" width="1000" height="600" style="border:0; width: 100%; display: block;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
             <p class="text-gray-700 text-[10px] uppercase tracking-widest">Criado por <a href="https://resume.oscarmosca.com.br" target="_blank" class="text-red-900">Oscar Mosca</a></p>
         </div>
     </footer>
 
-    <!-- Cookies -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#161e2d] border-t border-gray-800 p-4 z-[2000] hidden">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <p class="text-gray-400 text-sm">Utilizamos cookies para melhorar sua experiência de acordo com a LGPD.</p>
@@ -222,67 +259,61 @@
         </div>
     </div>
 
-    <!-- Script API do Google Maps para Reviews -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApOM3MlXcLEm2Hf8s71s8jdnxFWjX0qGc&libraries=places&callback=initReviews"></script>
-
-    <!-- Lógica Geral do Site -->
     <script>
-        // Carrega Reviews Dinâmicas do Google Meu Negócio
-        function initReviews() {
-            const service = new google.maps.places.PlacesService(document.createElement('div'));
-            service.getDetails({ placeId: 'ChIJGYvrkVxnv5QRTAUB4stv5Xs', fields: ['reviews'] }, function(place, status) {
-                const container = document.getElementById('reviews-container');
-                if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-                    container.innerHTML = place.reviews.slice(0, 6).map(r => `
-                        <div class="bg-[#161e2d] p-8 rounded-xl border border-gray-800 italic flex flex-col justify-between h-full shadow-lg">
-                            <p class="text-gray-400 mb-6 text-sm">"${r.text}"</p>
-                            <div>
-                                <div class="flex text-yellow-500 mb-2">${'★'.repeat(r.rating)}</div>
-                                <span class="text-white font-bold uppercase text-xs">${r.author_name}</span>
-                            </div>
-                        </div>
-                    `).join('');
-                } else { container.innerHTML = '<p class="text-gray-500 col-span-3 text-center">Não foi possível carregar as avaliações no momento.</p>'; }
-            });
-        }
-
-        // Simulador Previdenciário
+        // Simulador
         function liberarCaptura() {
-            const i = document.getElementById('calc-idade').value, t = document.getElementById('calc-tempo').value;
-            if(!i || !t) return alert("Preencha idade e tempo.");
+            const idade = document.getElementById('calc-idade').value;
+            const tempo = document.getElementById('calc-tempo').value;
+            if(!idade || !tempo) return alert("Por favor, preencha os campos.");
             document.getElementById('passo-captura').classList.remove('hidden');
             document.getElementById('passo-captura').scrollIntoView({ behavior: 'smooth' });
         }
+
         document.getElementById('calc-lead-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const n = document.getElementById('calc-nome').value, g = document.getElementById('calc-genero').value;
-            const i = parseInt(document.getElementById('calc-idade').value), t = parseInt(document.getElementById('calc-tempo').value);
-            let est = Math.max((g === 'M' ? 65 : 62) - i, (g === 'M' ? 20 : 15) - t, 0);
-            document.getElementById('calc-texto-resultado').innerText = est === 0 ? `Olá ${n}, você já atingiu os critérios! Recomendamos uma consulta.` : `Olá ${n}, faltam aprox. ${est} anos para atingir a regra geral.`;
+            const nome = document.getElementById('calc-nome').value;
+            const g = document.getElementById('calc-genero').value;
+            const idade = parseInt(document.getElementById('calc-idade').value);
+            const tempo = parseInt(document.getElementById('calc-tempo').value);
+            
+            let metaI = (g === 'M') ? 65 : 62;
+            let metaT = (g === 'M') ? 20 : 15;
+            let est = Math.max(metaI - idade, metaT - tempo, 0);
+            
+            document.getElementById('calc-texto-resultado').innerText = est === 0 ? `Olá ${nome}, você já pode atingir os critérios básicos de aposentadoria! Recomendamos uma consulta para validar o melhor valor.` : `Olá ${nome}, faltam aproximadamente ${est} anos para você atingir os critérios da regra geral.`;
+            
             document.getElementById('passo-captura').classList.add('hidden');
             document.getElementById('passo-resultado').classList.remove('hidden');
-            const fd = new FormData(); fd.append('nome', n); fd.append('whatsapp', document.getElementById('calc-tel').value);
-            fd.append('assunto', 'Lead Calculadora'); fd.append('mensagem', `Simulou: Faltam aprox. ${est} anos.`);
+
+            const fd = new FormData();
+            fd.append('nome', nome); 
+            fd.append('whatsapp', document.getElementById('calc-tel').value);
+            fd.append('assunto', 'Lead Calculadora'); 
+            fd.append('mensagem', `Simulou: Faltam aprox. ${est} anos.`);
+            
             fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { method: 'POST', body: fd });
         });
 
-        // Formulário de Contato e Outros
-        document.getElementById('mainContactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); const b = document.getElementById('btnMainEnviar'); b.innerText = "ENVIANDO..."; b.disabled = true;
-            fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { method: 'POST', body: new FormData(this) })
-                .then(() => { this.reset(); b.classList.add('hidden'); document.getElementById('mainMsgSucesso').classList.remove('hidden'); });
-        });
-        document.getElementById('whatsappMain').addEventListener('input', e => { let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/); e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : ''); });
-
         // Cookies
-        if (!localStorage.getItem('cookies-accepted')) document.getElementById('cookie-banner').classList.remove('hidden');
-        document.getElementById('accept-cookies').addEventListener('click', () => { localStorage.setItem('cookies-accepted', 'true'); document.getElementById('cookie-banner').classList.add('hidden'); document.body.classList.add('cookies-accepted'); });
+        const cookieBanner = document.getElementById('cookie-banner');
+        if (!localStorage.getItem('cookies-accepted')) {
+            cookieBanner.classList.remove('hidden');
+        } else {
+            document.body.classList.add('cookies-accepted');
+        }
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookies-accepted', 'true');
+            cookieBanner.classList.add('hidden');
+            document.body.classList.add('cookies-accepted');
+        });
 
         // Planilhas
         async function load(u, t, f=false) {
-            const r = await fetch(u); const rs = (await r.text()).split(/\r?\n/).filter(x => x.trim() !== "").slice(1);
+            const r = await fetch(u); const d = await r.text();
+            const rs = d.split(/\r?\n/).filter(x => x.trim() !== "").slice(1);
             document.getElementById(t).innerHTML = rs.map(x => {
-                const c = x.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g); if (!c) return '';
+                const c = x.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+                if (!c) return '';
                 const c1 = c[0].replace(/"/g,''), c2 = c[1].replace(/"/g,'');
                 if(f) return `<details class="bg-[#161e2d] border border-gray-800 rounded p-4 group cursor-pointer hover:border-red-900 transition text-left"><summary class="text-white font-bold uppercase text-sm flex justify-between">${c1}<span class="text-red-600 transition">+</span></summary><p class="text-gray-400 text-sm mt-4 leading-relaxed">${c2}</p></details>`;
                 const c3 = c[2].replace(/"/g,''), c4 = c[3] ? c[3].replace(/"/g,'') : null;
@@ -291,6 +322,21 @@
         }
         load('https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=0&output=csv', 'planilha-blog');
         load('https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTmFKa5sWYwZhGQdNtmv0UOA21ysvay_DGKbWyweedlgQtHSCe1pVMEN49s2grywXisQR4iJl8Q_N/pub?gid=1821350565&output=csv', 'planilha-faq', true);
+
+        // Formulário Principal
+        document.getElementById('mainContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnMainEnviar');
+            btn.innerText = "ENVIANDO..."; btn.disabled = true;
+            fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { method: 'POST', body: new FormData(this)})
+                .then(() => { this.reset(); btn.classList.add('hidden'); document.getElementById('mainMsgSucesso').classList.remove('hidden'); });
+        });
+
+        // Máscara WhatsApp
+        document.getElementById('whatsappMain').addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
     </script>
 </body>
 </html>
