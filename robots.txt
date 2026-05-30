@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Caminho do seu mapa do site
+Sitemap: https://oscarmoscaoli.github.io/marciorubia/sitemap.xml
