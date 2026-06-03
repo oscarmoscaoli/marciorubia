@@ -199,26 +199,32 @@
         });
 
         // Envio do formulário para o Google Apps Script
-        document.getElementById('loasContactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            const btn = document.getElementById('track-loas-form-submit'); 
-            btn.innerText = "ENVIANDO DADOS..."; 
-            btn.disabled = true;
-            
-            fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { 
-                method: 'POST', 
-                body: new FormData(this) 
-            })
-            .then(() => { 
-                this.style.display = 'none'; // Esconde o formulário
-                document.getElementById('loasMsgSucesso').classList.remove('hidden'); // Mostra a mensagem gigante
-            })
-            .catch(() => {
-                alert("Ocorreu um erro. Por favor, tente pelo WhatsApp.");
-                btn.innerText = "Solicitar Contato";
-                btn.disabled = false;
-            });
+document.getElementById('loasContactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    const btn = document.getElementById('track-loas-form-submit'); 
+    btn.innerText = "ENVIANDO DADOS..."; 
+    btn.disabled = true;
+    
+    fetch('https://script.google.com/macros/s/AKfycbz9J6JVEXAljyzPtltOQZVlZfzyVCN3Ux1-wabBQe8MHuIc7xla32di_9JiVRlr4ecG/exec', { 
+        method: 'POST', 
+        body: new FormData(this) 
+    })
+    .then(() => { 
+        this.style.display = 'none'; // Esconde o formulário
+        document.getElementById('loasMsgSucesso').classList.remove('hidden'); // Mostra a mensagem gigante
+        
+        // CÓDIGO NOVO: Avisa o GTM que o formulário foi um SUCESSO absoluto!
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'lead_loas_sucesso'
         });
+    })
+    .catch(() => {
+        alert("Ocorreu um erro. Por favor, tente pelo WhatsApp.");
+        btn.innerText = "Solicitar Contato";
+        btn.disabled = false;
+    });
+});
     </script>
 </body>
 </html>
